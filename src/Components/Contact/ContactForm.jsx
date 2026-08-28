@@ -6,6 +6,7 @@ import {
   Send,
   CheckCircle,
   AlertCircle,
+  Loader,
 } from "lucide-react";
 
 import { MagneticButton } from "../AnimatedButton";
@@ -718,17 +719,7 @@ export default function ContactForm() {
                 {isSubmitting || status === "sending" ? (
 
                   <>
-                    <span
-                      className="
-                        h-4
-                        w-4
-                        animate-spin
-                        rounded-full
-                        border-2
-                        border-black/30
-                        border-t-black
-                      "
-                    />
+                    <Loader className="text-xl animate-spin duration-300" />
 
                     Sending...
 

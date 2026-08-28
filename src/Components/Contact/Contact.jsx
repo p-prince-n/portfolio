@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import ContactCard from "./ContactCard";
 import { MagneticButton } from "../AnimatedButton";
 import ContactForm from "./ContactForm";
+import { contactItems } from "../../constants";
 
 const headingVariant = {
   hidden: {
@@ -218,39 +219,16 @@ const Contact = () => {
 
           {/* Contact Cards */}
 
-          <ContactCard
-            icon={Mail}
-            label="Email"
-            value="your-email@example.com"
-            href="mailto:your-email@example.com"
-            index={0}
-          />
-
-          <ContactCard
-            icon={Phone}
-            label="Phone"
-            value="+91 XXXXX XXXXX"
-            href="tel:+91XXXXXXXXXX"
-            index={1}
-          />
-
-          <ContactCard icon={MapPin} label="Location" value="India" index={2} />
-
-          <ContactCard
-            icon={FaGithub}
-            label="GitHub"
-            value="@yourusername"
-            href="https://github.com/yourusername"
-            index={3}
-          />
-
-          <ContactCard
-            icon={FaLinkedinIn}
-            label="LinkedIn"
-            value="linkedin.com/in/yourusername"
-            href="https://linkedin.com/in/yourusername"
-            index={4}
-          />
+      {contactItems.map((item, index) => (
+  <ContactCard
+    key={item.label}
+    icon={item.icon}
+    label={item.label}
+    value={item.value}
+    href={item.href}
+    index={index}
+  />
+))}
         </div>
 
      

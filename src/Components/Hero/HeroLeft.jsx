@@ -4,11 +4,8 @@ import React from "react";
 import { words } from "../../constants/index.js";
 import TypeWriter from "./TypeWriter.jsx";
 import { MagneticButton } from "../AnimatedButton.jsx";
-import { Download, Mail } from "lucide-react";
-
-/* --------------------------------
-   Entrance Animations
---------------------------------- */
+import { Download, icons, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const leftVariant = {
   hidden: {
@@ -67,10 +64,6 @@ const bottomVariant = {
   },
 };
 
-/* --------------------------------
-   Hero Container
---------------------------------- */
-
 const heroContainer = {
   hidden: {},
 
@@ -81,6 +74,19 @@ const heroContainer = {
     },
   },
 };
+
+const LinksData = [
+  {
+    id: "github",
+    icons: <FaGithub />,
+    link: "https://www.github.com/p-prince-n",
+  },
+  {
+    id: "linkedin",
+    icons: <FaLinkedin />,
+    link: "https://www.linkedin.com/in/prince-prajapati-362806394",
+  },
+];
 
 const HeroLeft = () => {
   return (
@@ -172,11 +178,7 @@ const HeroLeft = () => {
                 <motion.span
                   className="inline-block"
                   animate={{
-                    backgroundPosition: [
-                      "0% 50%",
-                      "100% 50%",
-                      "0% 50%",
-                    ],
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
                   transition={{
                     duration: 10,
@@ -217,11 +219,7 @@ const HeroLeft = () => {
                 <motion.span
                   className="inline-block"
                   animate={{
-                    backgroundPosition: [
-                      "0% 50%",
-                      "100% 50%",
-                      "0% 50%",
-                    ],
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
                   transition={{
                     duration: 12,
@@ -284,7 +282,6 @@ const HeroLeft = () => {
             >
               <h1>
                 Shaping
-
                 <span
                   className="
                     absolute
@@ -355,8 +352,8 @@ const HeroLeft = () => {
             >
               Transforming ideas into scalable web applications — MERN stack
               development that captivates, engages, and delivers results,
-              powered by AI-driven architecture that turns complex problems
-              into seamless, intelligent solutions.
+              powered by AI-driven architecture that turns complex problems into
+              seamless, intelligent solutions.
             </motion.div>
 
             {/* Buttons */}
@@ -408,19 +405,15 @@ const HeroLeft = () => {
                   hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
                 "
                 onClick={() => {
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
+                  document.getElementById("contact")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
                 }}
               >
                 <Mail size={18} />
 
-                <span className="relative z-10">
-                  Contact Me
-                </span>
+                <span className="relative z-10">Contact Me</span>
               </MagneticButton>
 
               {/* Resume */}
@@ -465,8 +458,7 @@ const HeroLeft = () => {
 
                   link.href = "/resume.pdf";
 
-                  link.download =
-                    "Prince-Prajapati-Resume.pdf";
+                  link.download = "Prince-Prajapati-Resume.pdf";
 
                   document.body.appendChild(link);
 
@@ -477,10 +469,76 @@ const HeroLeft = () => {
               >
                 <Download size={18} />
 
-                <span className="relative z-10">
-                  Download Resume
-                </span>
+                <span className="relative z-10">Download Resume</span>
               </MagneticButton>
+            </motion.div>
+
+            <motion.div
+              variants={bottomVariant}
+              className="
+                flex
+                flex-row
+                gap-5
+                w-full
+              "
+            >
+              {LinksData.length > 0 &&
+                LinksData.map((item) => (
+                  <MagneticButton
+                    key={item.id}
+                    className="
+    group
+    relative
+    isolate
+    overflow-hidden
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    rounded-full
+    border
+    border-emerald-400
+    bg-transparent
+    p-3
+    cursor-pointer
+    font-semibold
+    text-emerald-400
+    transition-all
+    duration-300
+
+    before:absolute
+    before:left-1/2
+    before:top-1/2
+    before:-z-10
+    before:w-0
+    before:h-0
+    before:-translate-x-1/2
+    before:-translate-y-1/2
+    before:rounded-full
+    before:bg-emerald-400
+    before:transition-all
+    before:duration-500
+    before:ease-out
+
+    hover:before:w-full
+    hover:before:h-full
+    hover:text-black
+    hover:scale-125
+
+    shadow-[0_0_20px_rgba(52,211,153,0.08)]
+    text-xl
+    hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
+  "
+                  >
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.icons}
+                    </a>
+                  </MagneticButton>
+                ))}
             </motion.div>
           </motion.div>
         </header>
