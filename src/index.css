@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caacupe+One&family=Carter+One&family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Charm:wght@400;700&family=Gravitas+One&family=Imperial+Script&family=Leckerli+One&family=Mea+Culpa&family=New+Rocker&family=Pacifico&family=Pangolin&family=Teko:wght@300..700&family=Tillana:wght@400;500;600;700;800&display=swap');
+
+
+
+@import "tailwindcss";
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;            
+}
+
+.new-rocker-font {
+  font-family: "New Rocker", system-ui;
+}
+
+
+.pacifico-font {
+  font-family: "Pacifico", cursive;
+}
+
+.gravitas-one-font {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.imperial-script-regular {
+  font-family: "Imperial Script", cursive;
+}
+
+
+.leckerli-one-font {
+  font-family: "Leckerli One", cursive;
+}
+.mea-culpa-regular {
+  font-family: "Mea Culpa", cursive;
+}
+
+
+
+.pangolin-font {
+  font-family: "Pangolin", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.charis-sil-font {
+  font-family: "Charis SIL", serif;
+}
+
+.cursor {
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 4s ease infinite;
+}
+
+.slide {
+  display: inline-block;
+  flex-direction: column;
+  transition: all cubic-bezier(0.71, 0.03, 0.34, 1);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+}
+
+@keyframes wordSlider {
+  0% {
+    transform: translateY(0.5%);
+  }
+  12.5% {
+    transform: translateY(-12.5%);
+  }
+  25% {
+    transform: translateY(-25%);
+  }
+  37.5% {
+    transform: translateY(-37.5%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  62.5% {
+    transform: translateY(-62.5%);
+  }
+  75% {
+    transform: translateY(-75%);
+  }
+  87.5% {
+    transform: translateY(-87.5%);
+  }
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-rise {
+  animation: cardRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-rise {
+    animation: none;
+  }
+}
+.skill-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+.skill-card-icon {
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .skill-card-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .skill-card-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes chipRise {
+          from { opacity: 0; transform: translateY(14px) scale(0.96); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .chip-rise {
+          animation: chipRise 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .chip-rise { animation: none; }
+        }
+
+        /* Skill card entrance */
+.skill-card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  animation: skillCardIn 0.6s ease-out forwards;
+}
+
+@keyframes skillCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Progress bar */
+.skill-progress {
+  width: 0;
+  animation: skillProgress 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes skillProgress {
+  to {
+    width: var(--skill-width);
+  }
+}
+
+/* Percentage animation */
+.percentage-counter {
+  animation: percentagePop 0.6s ease-out both;
+}
+
+@keyframes percentagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
