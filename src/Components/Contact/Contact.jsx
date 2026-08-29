@@ -1,13 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 import ContactCard from "./ContactCard";
-import { MagneticButton } from "../AnimatedButton";
 import ContactForm from "./ContactForm";
 import { contactItems } from "../../constants";
+import Header from "../Header"
 
 const headingVariant = {
   hidden: {
@@ -28,25 +25,7 @@ const headingVariant = {
   },
 };
 
-const formVariant = {
-  hidden: {
-    opacity: 0,
-    x: 50,
-    filter: "blur(8px)",
-  },
 
-  visible: {
-    opacity: 1,
-    x: 0,
-    filter: "blur(0px)",
-
-    transition: {
-      duration: 0.9,
-      delay: 0.25,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
 
 const Contact = () => {
   return (
@@ -57,12 +36,13 @@ const Contact = () => {
         w-full
         overflow-hidden
         px-5
-        py-16
+        py-5 md:py-6 lg:py-10
+       
         sm:px-8
         md:px-10
-        md:py-20
+       
         lg:px-16
-        lg:py-24
+      
       "
     >
       {/* =================================
@@ -100,66 +80,17 @@ const Contact = () => {
 
      
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        variants={{
-          hidden: {},
-
-          visible: {
-            transition: {
-              staggerChildren: 0.18,
-            },
-          },
-        }}
-        className="
-         flex w-full flex-col items-center justify-center
-        "
-      >
-        <motion.p
-          variants={headingVariant}
-         className="leckerli-one-font text-lg font-semibold md:text-xl"
-        >
-            &mdash;&mdash;&mdash;&mdash; Get In Touch
-          &mdash;&mdash;&mdash;&mdash;
-        </motion.p>
-
-        <motion.h1
-          variants={headingVariant}
-          className="
-            new-rocker-font
-            mt-2
-            text-3xl
-            font-bold
-            tracking-tight
-            text-white
-            sm:text-4xl
-            md:text-5xl
-            lg:text-6xl
-          "
-        >
-          Let's Work <span className="text-teal-400">Together</span>
-        </motion.h1>
-
-        <motion.p
-          variants={headingVariant}
-          className="
-            mt-4
-            max-w-2xl
-            text-sm
-            leading-7
-            text-gray-400
-            sm:text-base
-          "
-        >
-          Have a project, opportunity, or idea in mind? Let's build something
-          meaningful together.
-        </motion.p>
-      </motion.div>
+      <Header
+        label={"Get In Touch"}
+        header={
+          <>
+            Let's Work <span className="text-teal-400">Together</span>
+          </>
+        }
+        description={
+          "  Have a project, opportunity, or idea in mind? Let's build something meaningful together."
+        }
+      />
 
      
 

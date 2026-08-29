@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import EducationDetails from "./EducationDetails";
 import CourseCard from "./CourseCard";
+import Header from "../Header";
 
 const headingVariant = {
   hidden: {
@@ -45,15 +46,17 @@ export default function Education() {
         w-full
         overflow-hidden
         px-5
-        py-16
+        py-5
+        py-5 md:py-6 lg:py-10
+       
 
         sm:px-8
 
         md:px-10
-        md:py-20
+      
 
         lg:px-16
-        lg:py-24
+        
       "
     >
       {/* =================================
@@ -88,95 +91,17 @@ export default function Education() {
         "
       />
 
-    
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        variants={{
-          hidden: {},
-
-          visible: {
-            transition: {
-              staggerChildren: 0.18,
-            },
-          },
-        }}
-        className="
-          relative
-          z-10
-          mx-auto
-          flex
-          w-full
-          max-w-7xl
-          flex-col
-          items-center
-          justify-center
-        "
-      >
-        {/* Label */}
-
-        <motion.p
-          variants={headingVariant}
-          className="
-            leckerli-one-font
-            text-lg
-            font-semibold
-            md:text-xl
-          "
-        >
-          &mdash;&mdash;&mdash;&mdash;
-          Academic Background
-          &mdash;&mdash;&mdash;&mdash;
-        </motion.p>
-
-        {/* Heading */}
-
-        <motion.h1
-          variants={headingVariant}
-          className="
-            new-rocker-font
-            mt-2
-            text-center
-            text-3xl
-            font-bold
-            uppercase
-            text-white
-
-            sm:text-4xl
-            md:text-[40px]
-          "
-        >
-          Education{" "}
+      <Header label={" Academic Background"} header={<>
+        Education{" "}
 
           <span className="text-teal-400">
             & Learning
           </span>
-        </motion.h1>
+        </>} description={"My academic foundation in computer science and the core subjects that shaped my approach to software development."} />
 
-        {/* Description */}
+    
 
-        <motion.p
-          variants={headingVariant}
-          className="
-            mt-4
-            max-w-2xl
-            text-center
-            text-sm
-            leading-7
-            text-gray-500
-            sm:text-base
-          "
-        >
-          My academic foundation in computer science and the
-          core subjects that shaped my approach to software
-          development.
-        </motion.p>
-      </motion.div>
+      
 
 
       {/* =================================

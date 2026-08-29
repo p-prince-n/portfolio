@@ -42,6 +42,7 @@ import {
   SiPostman,
   SiNginx,
 } from "react-icons/si";
+import Header from "./Header";
 
 const SKILLS = [
   { name: "Java", category: "programming", percentage: 75, icon: FaJava },
@@ -154,23 +155,7 @@ const CATEGORIES = [
   { key: "tools", label: "Tools", icon: Wrench },
 ];
 
-const headingVariant = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    filter: "blur(8px)",
-  },
 
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 1.1,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
 
 
 const cardContainerVariant = {
@@ -241,55 +226,16 @@ export default function TechArsenal() {
   return (
     <div
       id="tech-skills"
-      className=" w-full flex flex-col items-center justify-center gap-5  px-6 py-16 sm:px-10 lg:px-16"
+      className=" w-full flex flex-col items-center justify-center gap-5  px-6 py-5 md:py-6 lg:py-10  sm:px-10 lg:px-16"
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.18,
-            },
-          },
-        }}
-        className="flex w-full flex-col items-center justify-center"
-      >
-        {/* Label */}
-        <motion.p
-          variants={headingVariant}
-          className="leckerli-one-font text-lg font-semibold md:text-xl"
-        >
-          &mdash;&mdash;&mdash;&mdash; Technical Arsenal
-          &mdash;&mdash;&mdash;&mdash;
-        </motion.p>
-
-        {/* Heading */}
-        <motion.h1
-          variants={headingVariant}
-          className="new-rocker-font text-[25px] font-bold uppercase text-teal-400 md:text-[40px]"
-        >
-          Skills{" "}
+      <Header label={"Technical Arsenal"} header={<>
+        Skills{" "}
           <span className="imperial-script-regular text-5xl font-bold">
             &amp;&nbsp;
           </span>
           Technologies
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          variants={headingVariant}
-          className="mt-3 text-sm text-gray-400 sm:text-base"
-        >
-          A focused stack for building scalable, production-ready web and AI
-          applications — from interface to infrastructure.
-        </motion.p>
-      </motion.div>
+        </>} description={"A focused stack for building scalable, production-ready web and AI applications — from interface to infrastructure."} />
+     
 
       <div className="flex flex-col items-center justify-start w-full ">
         {/* Category tabs */}

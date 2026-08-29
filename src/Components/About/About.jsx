@@ -57,7 +57,8 @@ export default function About() {
         w-full
         overflow-hidden
         px-6
-        py-20
+        py-5 md:py-6 lg:py-10
+       
         sm:px-10
         md:py-28
         lg:px-16

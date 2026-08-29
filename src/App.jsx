@@ -37,14 +37,11 @@ const App = () => {
         {/* Navbar */}
         <NavBar />
 
-        {/* =====================================================
-            HERO
-        ====================================================== */}
         <Section
           id="hero"
-          className="flex  w-full items-center justify-center px-4 pt-28 sm:px-6 lg:px-8"
+          className="flex min-h-screen  w-full items-center justify-center px-4 pt-28 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto grid w-full  grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="mx-auto -mt-10 grid w-full  grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
             <div className="order-2 lg:order-1">
               <HeroLeft />
@@ -57,9 +54,6 @@ const App = () => {
           </div>
         </Section>
 
-        {/* =====================================================
-            SKILLS
-        ====================================================== */}
         <Section
           id="skills"
           className="px-4 sm:px-6 lg:px-8"
@@ -69,9 +63,6 @@ const App = () => {
           </div>
         </Section>
 
-        {/* =====================================================
-            ABOUT
-        ====================================================== */}
         <Section
           id="about"
           className="px-4  sm:px-6 lg:px-8 "
@@ -81,9 +72,6 @@ const App = () => {
           </div>
         </Section>
 
-        {/* =====================================================
-            TECHNOLOGY
-        ====================================================== */}
         <Section
           id="tech-skills"
           className="px-4 sm:px-6 lg:px-8 "
@@ -93,21 +81,15 @@ const App = () => {
           </div>
         </Section>
 
-        {/* =====================================================
-            EDUCATION
-        ====================================================== */}
         <Section
           id="education"
-          className="px-4 sm:px-6 lg:px-8 "
+          className="px-4 sm:px-6 lg:px-8"
         >
           <div className="mx-auto w-full ">
             <Education />
           </div>
         </Section>
 
-        {/* =====================================================
-            EXPERIENCE
-        ====================================================== */}
         <Section
           id="experience"
           className="px-4 sm:px-6 lg:px-8"
@@ -117,9 +99,7 @@ const App = () => {
           </div>
         </Section>
 
-        {/* =====================================================
-            CONTACT
-        ====================================================== */}
+    
         <Section
           id="contact"
           className="min-h-screen px-4 sm:px-6 lg:px-8 "

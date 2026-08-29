@@ -9,6 +9,7 @@ import {
   Database,
   Container,
 } from "lucide-react";
+import Header from "./Header";
 
 const CARDS = [
   {
@@ -61,15 +62,7 @@ const CARDS = [
   },
 ];
 
-const headingVariant = {
-  hidden: { opacity: 0, y: 50, filter: "blur(8px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+
 const cardContainerVariant = {
   hidden: {},
   visible: { transition: { delayChildren: 0.3, staggerChildren: 0.28 } },
@@ -86,54 +79,20 @@ const cardVariant = {
 
 export default function SkillCards() {
   return (
-    <div id="skills" className="w-full px-6 py-16 sm:px-10 lg:px-16">
-     
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.18 } },
-        }}
-        className="flex w-full flex-col items-center justify-center"
-      >
-        
-        {/* Label */}
-        <motion.p
-          variants={headingVariant}
-          className=" leckerli-one-font text-lg font-semibold md:text-xl "
-        >
-          
-          &mdash;&mdash;&mdash;&mdash; What I Build
-          &mdash;&mdash;&mdash;&mdash;
-        </motion.p>
-        {/* Heading */}
-        <motion.h1
-          variants={headingVariant}
-          className=" new-rocker-font text-[25px] font-bold uppercase text-teal-400 md:text-[40px] "
-        >
-          
-          Skills
-          <span className="imperial-script-regular text-5xl font-bold">
+    <div id="skills" className="w-full sm:px-10 lg:px-16 py-5 md:py-6 lg:py-10">
+      <Header label={"What I Build"} header={<>
+        Skills
+          <span className="imperial-script-regular text-white text-5xl font-bold">
             
-            &amp;&nbsp;
+            &nbsp;&amp;&nbsp;&nbsp;
           </span>
           Focus Areas
-        </motion.h1>
-        {/* Description */}
-        <motion.p
-          variants={headingVariant}
-          className=" mt-3 text-center text-sm text-gray-400 sm:text-base "
-        >
-          
-          A snapshot of the stack and systems I work across, from interface to
-          infrastructure.
-        </motion.p>
-      </motion.div>
+        </>} description={"A snapshot of the stack and systems I work across, from interface to infrastructure."}  />
+     
+     
    
       <motion.div
-        className="mx-auto mt-5 lg:max-w-7/8 md:mt-10"
+        className="mx-auto mt-5 lg:max-w-7/8 md:mt-10 "
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
@@ -148,7 +107,7 @@ export default function SkillCards() {
         {CARDS.map(({ tag, icon: Icon, title, desc }, i) => (
           <motion.div
             key={title}
-             className=" card-rise group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-teal-400/40 hover:bg-white/[0.06] hover:shadow-[0_0_35px_-10px_rgba(45,212,191,0.35)] cursor-pointer "
+             className=" card-rise group relative overflow-hidden rounded-2xl border border-white/10 bg-white/3 p-6 backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-teal-400/40 hover:bg-white/[0.06] hover:shadow-[0_0_35px_-10px_rgba(45,212,191,0.35)] cursor-pointer "
              variants={cardVariant}
             style={{
               animationDelay: `${i * 90}ms`,

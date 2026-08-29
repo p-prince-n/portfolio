@@ -8,34 +8,10 @@ import {
   Database,
   Users,
 } from "lucide-react";
-
-/* =========================
-   HEADING ANIMATION
-========================= */
-
-const headingVariant = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    filter: "blur(8px)",
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-
-    transition: {
-      duration: 1.1,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+import Header from "./Header";
 
 
-/* =========================
-   EXPERIENCE CARD ANIMATION
-========================= */
+
 
 const cardVariant = {
   hidden: {
@@ -59,9 +35,6 @@ const cardVariant = {
 };
 
 
-/* =========================
-   LEFT CONTENT ANIMATION
-========================= */
 
 const infoVariant = {
   hidden: {
@@ -81,11 +54,6 @@ const infoVariant = {
     },
   },
 };
-
-
-/* =========================
-   EXPERIENCE DATA
-========================= */
 
 const EXPERIENCES = [
   {
@@ -129,89 +97,18 @@ const EXPERIENCES = [
 export default function Expreience() {
   return (
     <section
-      id="experience"
-      className="w-full overflow-hidden px-5 py-16 sm:px-8 md:px-10 lg:px-16 lg:py-24"
+      
+      className="w-full overflow-hidden  px-5  sm:px-8 md:px-10 lg:px-16 py-5 md:py-6 lg:py-10"
     >
-
-     
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        variants={{
-          hidden: {},
-
-          visible: {
-            transition: {
-              staggerChildren: 0.18,
-            },
-          },
-        }}
-        className="mb-10 flex w-full flex-col items-center justify-center text-center md:mb-14"
-      >
-
-        {/* Label */}
-
-        <motion.p
-          variants={headingVariant}
-          className="
-            leckerli-one-font
-            text-base
-            font-semibold
-            sm:text-lg
-            md:text-xl
-          "
-        >
-          &mdash;&mdash;&mdash;&mdash; Work Experience
-          &mdash;&mdash;&mdash;&mdash;
-        </motion.p>
-
-
-        {/* Heading */}
-
-        <motion.h1
-          variants={headingVariant}
-          className="
-            new-rocker-font
-            mt-1
-            text-[25px]
-            font-bold
-            uppercase
-            text-teal-400
-            sm:text-[32px]
-            md:text-[40px]
-          "
-        >
-          Professional &nbsp;&nbsp;
+      <Header label={"Work Experience"} id={"experience"} header={<>
+        Professional &nbsp;&nbsp;
 
           <span className="text-white">
             Journey
           </span>
-        </motion.h1>
+        </>} description={"A glimpse into the projects, systems, and technologies I've worked with while building production-ready frontend applications."} />
 
-
-        {/* Description */}
-
-        <motion.p
-          variants={headingVariant}
-          className="
-            mt-3
-            max-w-2xl
-            text-sm
-            leading-relaxed
-            text-gray-400
-            sm:text-base
-          "
-        >
-          A glimpse into the projects, systems, and technologies I've worked
-          with while building production-ready frontend applications.
-        </motion.p>
-
-      </motion.div>
+     
 
 
       {/* =================================

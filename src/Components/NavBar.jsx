@@ -59,9 +59,6 @@ const navItems = [
   },
 ];
 
-/* =========================================================
-   NAVBAR LOGO
-========================================================= */
 
 function NavbarLogo({ onClick }) {
   return (
@@ -73,7 +70,7 @@ function NavbarLogo({ onClick }) {
       className="group flex min-w-0 shrink-0 items-center gap-2.5"
       aria-label="Go to home"
     >
-      {/* Logo icon */}
+     
       <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-emerald-400/30 bg-emerald-400/10 sm:h-11 sm:w-11">
         {/* Glow */}
         <motion.div
@@ -95,8 +92,8 @@ function NavbarLogo({ onClick }) {
         />
       </div>
 
-      {/* Logo text */}
-      <div className="hidden min-[480px]:block">
+    
+      <div className="">
         <div className="flex items-center gap-1 text-sm font-bold tracking-tight sm:text-base">
           <span className="text-emerald-400">Prince</span>
           <span className="text-white">P</span>
@@ -110,9 +107,6 @@ function NavbarLogo({ onClick }) {
   );
 }
 
-/* =========================================================
-   DESKTOP NAV ITEM
-========================================================= */
 
 function NavItem({ item, active, onClick }) {
   const Icon = item.icon;
@@ -127,7 +121,7 @@ function NavItem({ item, active, onClick }) {
       className="group relative flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium"
       aria-current={isActive ? "page" : undefined}
     >
-      {/* Hover background */}
+     
       <motion.span
         className="absolute inset-0 rounded-xl bg-emerald-400/[0.06]"
         initial={{ opacity: 0 }}
@@ -135,7 +129,7 @@ function NavItem({ item, active, onClick }) {
         transition={{ duration: 0.2 }}
       />
 
-      {/* Active background */}
+     
       {isActive && (
         <motion.span
           layoutId="desktop-active"
@@ -149,7 +143,7 @@ function NavItem({ item, active, onClick }) {
         />
       )}
 
-      {/* Icon */}
+     
       <Icon
         size={16}
         className={`relative z-10 transition-colors duration-300 ${
@@ -181,9 +175,6 @@ function NavItem({ item, active, onClick }) {
   );
 }
 
-/* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
 
 function DesktopNav({ active, onNavigate }) {
   return (
@@ -200,9 +191,7 @@ function DesktopNav({ active, onNavigate }) {
   );
 }
 
-/* =========================================================
-   THEME TOGGLE
-========================================================= */
+
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -267,9 +256,6 @@ function ThemeToggle({ darkMode, setDarkMode }) {
   );
 }
 
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
 
 function MobileMenuButton({ mobileOpen, setMobileOpen }) {
   return (
@@ -332,9 +318,6 @@ function MobileMenuButton({ mobileOpen, setMobileOpen }) {
   );
 }
 
-/* =========================================================
-   MOBILE NAV ITEM
-========================================================= */
 
 function MobileNavItem({ item, active, onClick }) {
   const Icon = item.icon;
@@ -418,9 +401,6 @@ function MobileNavItem({ item, active, onClick }) {
   );
 }
 
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
 
 function MobileNav({ active, onNavigate }) {
   return (
@@ -489,26 +469,17 @@ function MobileNav({ active, onNavigate }) {
   );
 }
 
-/* =========================================================
-   MAIN NAVBAR
-========================================================= */
 
 export default function NavBar() {
   const [active, setActive] = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
-  /* =======================================================
-     DARK MODE
-  ======================================================== */
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
-  /* =======================================================
-     ACTIVE SECTION DETECTION
-  ======================================================== */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -549,28 +520,37 @@ export default function NavBar() {
     };
   }, []);
 
-  /* =======================================================
-     NAVIGATION
-  ======================================================== */
+  
 
-  const handleNavigation = (href) => {
-    const target = document.querySelector(href);
+ const handleNavigation = (href) => {
+  const target = document.querySelector(href);
 
-    if (!target) return;
+  if (!target) return;
 
-    setActive(href.substring(1));
+  // Close mobile menu FIRST
+  setMobileOpen(false);
 
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+  // Update active item
+  setActive(href.substring(1));
+
+  // Wait for mobile menu/body overflow to reset
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const headerOffset = 90;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
     });
+  });
+};
 
-    setMobileOpen(false);
-  };
-
-  /* =======================================================
-     CLOSE MOBILE MENU ON RESIZE
-  ======================================================== */
 
   useEffect(() => {
     const handleResize = () => {
@@ -586,25 +566,24 @@ export default function NavBar() {
     };
   }, []);
 
-  /* =======================================================
-     LOCK BODY SCROLL
-  ======================================================== */
 
-  useEffect(() => {
-    if (mobileOpen && window.innerWidth < 1024) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+useEffect(() => {
+  const isMobile = window.innerWidth < 1024;
 
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [mobileOpen]);
+  if (mobileOpen && isMobile) {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }
 
-  /* =======================================================
-     NAVBAR
-  ======================================================== */
+  return () => {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  };
+}, [mobileOpen]);
+
 
   return (
     <motion.header
@@ -620,7 +599,7 @@ export default function NavBar() {
         duration: 0.7,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-5 lg:px-8"
+      className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-5 xl:px-8 "
     >
       <nav className="mx-auto max-w-7xl rounded-2xl border border-white/10 bg-black/75 px-3 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:px-4 sm:py-3">
         {/* Main row */}
