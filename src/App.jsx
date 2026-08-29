@@ -1,7 +1,7 @@
 
-import React from "react";
 
-import NavBar from "./Components/NavBar";
+
+import NavBar from "./Components/Navbar/NavBar";
 
 import HeroLeft from "./Components/Hero/HeroLeft";
 import HeroRight from "./Components/Hero/HeroRight";
@@ -14,6 +14,7 @@ import Expreience from "./Components/Expreience";
 import Contact from "./Components/Contact/Contact";
 
 import BackgroundAnimation from "./BackgroundAnimation";
+import { useTheme } from "./Context/ThemeContext";
 
 const Section = ({ id, children, className = "" }) => {
   return (
@@ -27,8 +28,12 @@ const Section = ({ id, children, className = "" }) => {
 };
 
 const App = () => {
+ const { darkMode } = useTheme()
+ console.log({darkMode});
+ 
+  
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white selection:bg-emerald-400/30 selection:text-emerald-300">
+    <div data-theme={darkMode? "dark": "light"} className="relative min-h-screen overflow-x-hidden  text-black  dark:text-white selection:bg-emerald-400/30 selection:text-emerald-300">
       {/* Background */}
       <BackgroundAnimation />
 

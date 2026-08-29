@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+
+
+
+
+
+
+
 const cardVariant = {
   hidden: {
     opacity: 0,
@@ -14,7 +21,6 @@ const cardVariant = {
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-
     transition: {
       duration: 0.9,
       ease: [0.22, 1, 0.36, 1],
@@ -34,7 +40,6 @@ export default function CapabilityCard({
 
   const [pressed, setPressed] = useState(false);
 
-
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
@@ -50,7 +55,6 @@ export default function CapabilityCard({
     });
   };
 
-
   const resetCard = () => {
     setRotate({
       x: 0,
@@ -59,7 +63,6 @@ export default function CapabilityCard({
 
     setPressed(false);
   };
-
 
   return (
     <motion.div
@@ -90,30 +93,44 @@ export default function CapabilityCard({
         overflow-hidden
         rounded-2xl
         border
-        border-white/10
-        bg-white/[0.025]
+
+        border-slate-200
+        bg-white
+
+        dark:border-white/10
+        dark:bg-white/[0.025]
+
         p-6
         backdrop-blur-xl
-        transition-colors
+
+        transition-all
         duration-500
 
-        hover:border-teal-400/30
-        hover:bg-white/[0.045]
-        hover:shadow-[0_25px_60px_-25px_rgba(45,212,191,0.4)]
+        hover:border-teal-500/30
+        hover:bg-slate-50
+        hover:shadow-[0_25px_60px_-25px_rgba(20,184,166,0.25)]
+
+        dark:hover:border-teal-400/30
+        dark:hover:bg-white/[0.045]
+        dark:hover:shadow-[0_25px_60px_-25px_rgba(45,212,191,0.4)]
       "
     >
-
       {/* Gradient */}
-
       <div
         className="
           pointer-events-none
           absolute
           inset-0
+
           bg-gradient-to-br
-          from-teal-400/[0.07]
+          from-teal-500/[0.05]
           via-transparent
-          to-violet-500/[0.08]
+          to-violet-500/[0.06]
+
+          dark:from-teal-400/[0.07]
+          dark:via-transparent
+          dark:to-violet-500/[0.08]
+
           opacity-0
           transition-opacity
           duration-500
@@ -121,9 +138,7 @@ export default function CapabilityCard({
         "
       />
 
-
       {/* Glow */}
-
       <div
         className="
           pointer-events-none
@@ -133,14 +148,19 @@ export default function CapabilityCard({
           h-32
           w-32
           rounded-full
-          bg-teal-400/10
+
+          bg-teal-500/10
+          dark:bg-teal-400/10
+
           blur-3xl
+
           transition-all
           duration-500
-          group-hover:bg-teal-400/20
+
+          group-hover:bg-teal-500/20
+          dark:group-hover:bg-teal-400/20
         "
       />
-
 
       <div
         className="
@@ -151,9 +171,7 @@ export default function CapabilityCard({
           transform: "translateZ(35px)",
         }}
       >
-
         {/* Icon */}
-
         <motion.div
           whileHover={{
             rotate: 8,
@@ -167,53 +185,70 @@ export default function CapabilityCard({
             justify-center
             rounded-xl
             border
-            border-teal-400/20
-            bg-teal-400/[0.06]
-            text-teal-300
+
+            border-teal-500/20
+            bg-teal-500/[0.06]
+            text-teal-600
+
+            dark:border-teal-400/20
+            dark:bg-teal-400/[0.06]
+            dark:text-teal-300
+
             transition-all
             duration-300
-            group-hover:border-teal-400/40
-            group-hover:bg-teal-400/10
+
+            group-hover:border-teal-500/40
+            group-hover:bg-teal-500/10
+
+            dark:group-hover:border-teal-400/40
+            dark:group-hover:bg-teal-400/10
           "
         >
           <Icon size={21} strokeWidth={1.7} />
         </motion.div>
 
-
         {/* Content */}
-
         <h3
           className="
             mt-6
             text-lg
             font-semibold
-            text-gray-100
+
+            text-slate-900
+            dark:text-gray-100
+
             transition-all
             duration-300
+
             group-hover:translate-x-1
-            group-hover:text-teal-200
+            group-hover:text-teal-600
+
+            dark:group-hover:text-teal-200
           "
         >
           {title}
         </h3>
-
 
         <p
           className="
             mt-3
             text-sm
             leading-6
-            text-gray-500
+
+            text-slate-600
+            dark:text-gray-500
+
             transition-colors
             duration-300
-            group-hover:text-gray-400
+
+            group-hover:text-slate-700
+            dark:group-hover:text-gray-400
           "
         >
           {description}
         </p>
-
       </div>
-
     </motion.div>
   );
 }
+

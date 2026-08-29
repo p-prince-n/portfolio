@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+
 const cardVariant = {
   hidden: {
     opacity: 0,
@@ -14,7 +15,6 @@ const cardVariant = {
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-
     transition: {
       duration: 0.8,
       ease: [0.22, 1, 0.36, 1],
@@ -31,7 +31,6 @@ const contentVariant = {
   visible: {
     opacity: 1,
     x: 0,
-
     transition: {
       duration: 0.55,
       ease: [0.22, 1, 0.36, 1],
@@ -39,7 +38,7 @@ const contentVariant = {
   },
 };
 
- function CourseCard({ number, title, index = 0 }) {
+function CourseCard({ number, title, index = 0 }) {
   const [rotate, setRotate] = useState({
     x: 0,
     y: 0,
@@ -107,8 +106,13 @@ const contentVariant = {
         overflow-hidden
         rounded-2xl
         border
-        border-white/10
-        bg-white/[0.035]
+
+        border-slate-200
+        bg-white
+
+        dark:border-white/10
+        dark:bg-white/[0.035]
+
         px-4
         py-4
         backdrop-blur-xl
@@ -116,9 +120,13 @@ const contentVariant = {
         transition-all
         duration-500
 
-        hover:border-teal-400/30
-        hover:bg-white/[0.055]
-        hover:shadow-[0_20px_60px_-25px_rgba(45,212,191,0.45)]
+        hover:border-teal-500/30
+        hover:bg-slate-50
+        hover:shadow-[0_20px_60px_-25px_rgba(20,184,166,0.25)]
+
+        dark:hover:border-teal-400/30
+        dark:hover:bg-white/[0.055]
+        dark:hover:shadow-[0_20px_60px_-25px_rgba(45,212,191,0.45)]
 
         sm:px-5
         sm:py-4
@@ -132,9 +140,15 @@ const contentVariant = {
           inset-0
           rounded-2xl
           bg-gradient-to-br
-          from-teal-400/[0.08]
+
+          from-teal-500/[0.05]
           via-transparent
-          to-violet-500/[0.08]
+          to-violet-500/[0.05]
+
+          dark:from-teal-400/[0.08]
+          dark:via-transparent
+          dark:to-violet-500/[0.08]
+
           opacity-0
           transition-opacity
           duration-500
@@ -152,11 +166,17 @@ const contentVariant = {
           h-28
           w-28
           rounded-full
-          bg-teal-400/10
+
+          bg-teal-500/10
+          dark:bg-teal-400/10
+
           blur-3xl
+
           transition-all
           duration-500
-          group-hover:bg-teal-400/20
+
+          group-hover:bg-teal-500/20
+          dark:group-hover:bg-teal-400/20
         "
       />
 
@@ -169,10 +189,14 @@ const contentVariant = {
           right-0
           top-0
           h-px
+
           bg-gradient-to-r
           from-transparent
-          via-teal-400/70
+          via-teal-500/70
           to-transparent
+
+          dark:via-teal-400/70
+
           opacity-40
           transition-opacity
           duration-500
@@ -205,19 +229,30 @@ const contentVariant = {
             justify-center
             rounded-lg
             border
-            border-teal-400/30
-            bg-teal-400/[0.06]
+
+            border-teal-500/30
+            bg-teal-500/[0.06]
+
+            dark:border-teal-400/30
+            dark:bg-teal-400/[0.06]
+
             font-mono
             text-[10px]
             font-semibold
-            text-teal-300
+
+            text-teal-600
+            dark:text-teal-300
 
             transition-all
             duration-300
 
             group-hover:scale-110
-            group-hover:border-teal-400/50
-            group-hover:bg-teal-400/10
+
+            group-hover:border-teal-500/50
+            group-hover:bg-teal-500/10
+
+            dark:group-hover:border-teal-400/50
+            dark:group-hover:bg-teal-400/10
           "
         >
           {String(number).padStart(2, "0")}
@@ -229,13 +264,17 @@ const contentVariant = {
           className="
             text-sm
             font-medium
-            text-gray-300
+
+            text-slate-700
+            dark:text-gray-300
 
             transition-all
             duration-300
 
             group-hover:translate-x-1
-            group-hover:text-white
+            group-hover:text-slate-900
+
+            dark:group-hover:text-white
 
             sm:text-[15px]
           "
@@ -248,14 +287,18 @@ const contentVariant = {
           variants={contentVariant}
           className="
             ml-auto
-            text-teal-400/50
+
+            text-teal-600/50
+            dark:text-teal-400/50
 
             transition-all
             duration-300
 
             group-hover:translate-x-1
             group-hover:-translate-y-1
-            group-hover:text-teal-300
+
+            group-hover:text-teal-600
+            dark:group-hover:text-teal-300
           "
         >
           ↗
@@ -265,4 +308,4 @@ const contentVariant = {
   );
 }
 
-export default React.memo(CourseCard)
+export default React.memo(CourseCard);

@@ -1,10 +1,11 @@
+
 import { motion } from "framer-motion";
 import React from "react";
 
 import { words } from "../../constants/index.js";
 import TypeWriter from "./TypeWriter.jsx";
 import { MagneticButton } from "../AnimatedButton.jsx";
-import { Download, icons, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const leftVariant = {
@@ -107,6 +108,8 @@ const HeroLeft = () => {
           justify-center
           xl:mt-20
           mt-20
+          transition-colors
+          duration-500
         "
         variants={heroContainer}
         initial="hidden"
@@ -135,7 +138,15 @@ const HeroLeft = () => {
           >
             <motion.p
               variants={leftVariant}
-              className="leckerli-one-font text-xl font-bold"
+              className="
+                leckerli-one-font
+                text-xl
+                font-bold
+                text-slate-800
+                dark:text-inherit
+                transition-colors
+                duration-500
+              "
             >
               Hey, I'm
             </motion.p>
@@ -168,11 +179,18 @@ const HeroLeft = () => {
                 variants={leftVariant}
                 className="
                   bg-gradient-to-r
-                  from-cyan-400
-                  via-teal-400
-                  to-emerald-500
+                  from-cyan-600
+                  via-teal-600
+                  to-emerald-600
+
+                  dark:from-cyan-400
+                  dark:via-teal-400
+                  dark:to-emerald-500
+
                   bg-clip-text
                   text-transparent
+                  transition-colors
+                  duration-500
                 "
               >
                 <motion.span
@@ -188,9 +206,7 @@ const HeroLeft = () => {
                   style={{
                     backgroundImage:
                       "linear-gradient(90deg, #22d3ee, #2dd4bf, #10b981, #22d3ee)",
-
                     backgroundSize: "250% 100%",
-
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -209,11 +225,18 @@ const HeroLeft = () => {
                   -mt-4
                   xl:-mt-8
                   bg-gradient-to-r
-                  from-purple-600
-                  via-pink-500
-                  to-orange-400
+                  from-violet-600
+                  via-fuchsia-600
+                  to-orange-500
+
+                  dark:from-purple-600
+                  dark:via-pink-500
+                  dark:to-orange-400
+
                   bg-clip-text
                   text-transparent
+                  transition-colors
+                  duration-500
                 "
               >
                 <motion.span
@@ -229,9 +252,7 @@ const HeroLeft = () => {
                   style={{
                     backgroundImage:
                       "linear-gradient(90deg, #9333ea, #ec4899, #fb923c, #9333ea)",
-
                     backgroundSize: "250% 100%",
-
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -253,7 +274,11 @@ const HeroLeft = () => {
           --------------------------------- */}
 
           <motion.div
-            className="flex flex-col gap-7"
+            className="
+              flex
+              flex-col
+              gap-7
+            "
             variants={{
               hidden: {},
 
@@ -278,6 +303,10 @@ const HeroLeft = () => {
                 relative
                 z-10
                 pointer-events-none
+                text-slate-800
+                dark:text-inherit
+                transition-colors
+                duration-500
               "
             >
               <h1>
@@ -346,8 +375,13 @@ const HeroLeft = () => {
                 text-lg
                 md:text-xl
                 font-semibold
-                text-gray-300
+
+                text-gray-700
+                dark:text-gray-300
+
                 charis-sil-font
+                transition-colors
+                duration-500
               "
             >
               Transforming ideas into scalable web applications — MERN stack
@@ -382,27 +416,41 @@ const HeroLeft = () => {
                   gap-2
                   rounded-full
                   border
-                  border-emerald-400
+
+                  border-emerald-600
+                  dark:border-emerald-400
+
                   bg-transparent
                   px-6
                   py-2.5
                   cursor-pointer
                   font-semibold
-                  text-emerald-400
+
+                  text-emerald-700
+                  dark:text-emerald-400
+
                   transition-all
                   duration-300
+
                   before:absolute
                   before:inset-y-0
                   before:left-0
                   before:-z-10
                   before:w-0
-                  before:bg-emerald-400
+
+                  before:bg-emerald-500
+                  dark:before:bg-emerald-400
+
                   before:transition-all
                   before:duration-500
                   hover:before:w-full
                   hover:text-black
-                  shadow-[0_0_20px_rgba(52,211,153,0.08)]
-                  hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
+
+                  shadow-[0_0_20px_rgba(16,185,129,0.08)]
+                  dark:shadow-[0_0_20px_rgba(52,211,153,0.08)]
+
+                  hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]
+                  dark:hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
                 "
                 onClick={() => {
                   document.getElementById("contact")?.scrollIntoView({
@@ -430,28 +478,45 @@ const HeroLeft = () => {
                   gap-2
                   rounded-full
                   border
-                  border-violet-400/60
-                  bg-violet-950
+
+                  border-violet-600/60
+                  dark:border-violet-400/60
+
+                  bg-violet-100
+                  dark:bg-violet-950
+
                   px-5
                   py-2
                   cursor-pointer
                   font-semibold
-                  text-violet-200
+
+                  text-violet-700
+                  dark:text-violet-200
+
                   transition-all
                   duration-300
+
                   before:absolute
                   before:inset-y-0
                   before:left-0
                   before:-z-10
                   before:w-0
                   before:rounded-full
-                  before:bg-violet-400
+
+                  before:bg-violet-500
+                  dark:before:bg-violet-400
+
                   before:transition-all
                   before:duration-500
+
                   hover:before:w-full
                   hover:text-black
-                  hover:border-violet-300
-                  hover:shadow-[0_0_30px_rgba(167,139,250,0.4)]
+
+                  hover:border-violet-500
+                  dark:hover:border-violet-300
+
+                  hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
+                  dark:hover:shadow-[0_0_30px_rgba(167,139,250,0.4)]
                 "
                 onClick={() => {
                   const link = document.createElement("a");
@@ -473,6 +538,8 @@ const HeroLeft = () => {
               </MagneticButton>
             </motion.div>
 
+            {/* Social Links */}
+
             <motion.div
               variants={bottomVariant}
               className="
@@ -487,48 +554,61 @@ const HeroLeft = () => {
                   <MagneticButton
                     key={item.id}
                     className="
-    group
-    relative
-    isolate
-    overflow-hidden
-    inline-flex
-    items-center
-    justify-center
-    gap-2
-    rounded-full
-    border
-    border-emerald-400
-    bg-transparent
-    p-3
-    cursor-pointer
-    font-semibold
-    text-emerald-400
-    transition-all
-    duration-300
+                      group
+                      relative
+                      isolate
+                      overflow-hidden
+                      inline-flex
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-full
+                      border
 
-    before:absolute
-    before:left-1/2
-    before:top-1/2
-    before:-z-10
-    before:w-0
-    before:h-0
-    before:-translate-x-1/2
-    before:-translate-y-1/2
-    before:rounded-full
-    before:bg-emerald-400
-    before:transition-all
-    before:duration-500
-    before:ease-out
+                      border-emerald-600
+                      dark:border-emerald-400
 
-    hover:before:w-full
-    hover:before:h-full
-    hover:text-black
-    hover:scale-125
+                      bg-transparent
+                      p-3
+                      cursor-pointer
+                      font-semibold
 
-    shadow-[0_0_20px_rgba(52,211,153,0.08)]
-    text-xl
-    hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
-  "
+                      text-emerald-700
+                      dark:text-emerald-400
+
+                      transition-all
+                      duration-300
+
+                      before:absolute
+                      before:left-1/2
+                      before:top-1/2
+                      before:-z-10
+                      before:w-0
+                      before:h-0
+                      before:-translate-x-1/2
+                      before:-translate-y-1/2
+                      before:rounded-full
+
+                      before:bg-emerald-500
+                      dark:before:bg-emerald-400
+
+                      before:transition-all
+                      before:duration-500
+                      before:ease-out
+
+                      hover:before:w-full
+                      hover:before:h-full
+                      hover:text-black
+                      hover:scale-125
+
+                      shadow-[0_0_20px_rgba(16,185,129,0.08)]
+                      dark:shadow-[0_0_20px_rgba(52,211,153,0.08)]
+
+                      text-xl
+
+                      hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]
+                      dark:hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
+                    "
                   >
                     <a
                       href={item.link}
@@ -548,3 +628,4 @@ const HeroLeft = () => {
 };
 
 export default React.memo(HeroLeft);
+

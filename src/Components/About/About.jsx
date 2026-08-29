@@ -39,14 +39,13 @@ const capabilities = [
 
 const sectionVariant = {
   hidden: {},
+
   visible: {
     transition: {
       staggerChildren: 0.14,
     },
   },
 };
-
-
 
 export default function About() {
   return (
@@ -57,16 +56,16 @@ export default function About() {
         w-full
         overflow-hidden
         px-6
-        py-5 md:py-6 lg:py-10
-       
+        py-5
         sm:px-10
         md:py-28
         lg:px-16
+
+        transition-colors
+        duration-500
       "
     >
-
       {/* Background glow */}
-
       <div
         className="
           pointer-events-none
@@ -76,8 +75,14 @@ export default function About() {
           h-[400px]
           w-[400px]
           rounded-full
-          bg-teal-400/[0.06]
+
+          bg-teal-500/[0.05]
+          dark:bg-teal-400/[0.06]
+
           blur-[120px]
+
+          transition-colors
+          duration-500
         "
       />
 
@@ -90,17 +95,19 @@ export default function About() {
           h-[450px]
           w-[450px]
           rounded-full
-          bg-violet-500/[0.05]
+
+          bg-violet-500/[0.04]
+          dark:bg-violet-500/[0.05]
+
           blur-[130px]
+
+          transition-colors
+          duration-500
         "
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-
-
         <AboutHero />
-
-
 
         <motion.div
           initial="hidden"
@@ -125,7 +132,6 @@ export default function About() {
             />
           ))}
         </motion.div>
-
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
+
 const educationVariant = {
   hidden: {
     opacity: 0,
@@ -17,7 +18,6 @@ const educationVariant = {
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-
     transition: {
       duration: 1,
       ease: [0.22, 1, 0.36, 1],
@@ -34,7 +34,6 @@ const textVariant = {
   visible: {
     opacity: 1,
     y: 0,
-
     transition: {
       duration: 0.6,
       ease: [0.22, 1, 0.36, 1],
@@ -42,7 +41,7 @@ const textVariant = {
   },
 };
 
- function EducationDetails() {
+function EducationDetails() {
   const [rotate, setRotate] = useState({
     x: 0,
     y: 0,
@@ -103,23 +102,34 @@ const textVariant = {
         overflow-hidden
         rounded-3xl
         border
-        border-white/10
-        bg-white/[0.025]
+
+        border-slate-200
+        bg-white
+
+        dark:border-white/10
+        dark:bg-white/[0.025]
+
         p-5
         backdrop-blur-xl
 
         transition-all
         duration-500
 
-        hover:border-teal-400/20
-        hover:bg-white/[0.04]
-        hover:shadow-[0_25px_80px_-35px_rgba(45,212,191,0.4)]
-        
+        hover:border-teal-500/20
+        hover:bg-slate-50
+        hover:shadow-[0_25px_80px_-35px_rgba(20,184,166,0.25)]
+
+        dark:hover:border-teal-400/20
+        dark:hover:bg-white/[0.04]
+        dark:hover:shadow-[0_25px_80px_-35px_rgba(45,212,191,0.4)]
+
         sm:p-7
+
         lg:border-transparent
         lg:bg-transparent
         lg:p-0
         lg:backdrop-blur-none
+
         lg:hover:border-transparent
         lg:hover:bg-transparent
         lg:hover:shadow-none
@@ -131,13 +141,20 @@ const textVariant = {
           pointer-events-none
           absolute
           inset-0
+
           bg-gradient-to-br
-          from-teal-400/[0.05]
+          from-teal-500/[0.04]
           via-transparent
-          to-violet-500/[0.06]
+          to-violet-500/[0.05]
+
+          dark:from-teal-400/[0.05]
+          dark:via-transparent
+          dark:to-violet-500/[0.06]
+
           opacity-0
           transition-opacity
           duration-700
+
           group-hover:opacity-100
 
           lg:hidden
@@ -149,7 +166,7 @@ const textVariant = {
           relative
           z-10
           lg:transform-[translateZ(30px)]
-           lg:p-5
+          lg:p-5
         "
         style={{
           transform: "translateZ(30px)",
@@ -170,16 +187,25 @@ const textVariant = {
               justify-center
               rounded-xl
               border
-              border-teal-400/30
-              bg-teal-400/[0.07]
-              text-teal-300
+
+              border-teal-500/30
+              bg-teal-500/[0.07]
+              text-teal-600
+
+              dark:border-teal-400/30
+              dark:bg-teal-400/[0.07]
+              dark:text-teal-300
 
               transition-all
               duration-300
 
               group-hover:scale-110
-              group-hover:border-teal-400/50
-              group-hover:bg-teal-400/10
+
+              group-hover:border-teal-500/50
+              group-hover:bg-teal-500/10
+
+              dark:group-hover:border-teal-400/50
+              dark:group-hover:bg-teal-400/10
             "
           >
             <GraduationCap
@@ -195,7 +221,12 @@ const textVariant = {
                 text-xs
                 uppercase
                 tracking-[0.18em]
-                text-gray-300
+
+                text-slate-600
+                dark:text-gray-300
+
+                transition-colors
+                duration-500
               "
             >
               Bachelor's Degree
@@ -206,10 +237,15 @@ const textVariant = {
                 mt-1
                 text-sm
                 font-semibold
-                text-teal-400
+
+                text-teal-600
+                dark:text-teal-400
+
                 transition-colors
                 duration-300
-                group-hover:text-teal-300
+
+                group-hover:text-teal-500
+                dark:group-hover:text-teal-300
               "
             >
               S.I.E.S. College of Arts Science and Commerce
@@ -226,17 +262,31 @@ const textVariant = {
             text-2xl
             font-bold
             leading-tight
-            text-white
+
+            text-slate-900
+            dark:text-white
+
             transition-colors
             duration-300
-            group-hover:text-teal-50
+
+            group-hover:text-teal-900
+            dark:group-hover:text-teal-50
 
             sm:text-3xl
           "
         >
           Bachelor of Science
           <br />
-          <span className="text-teal-400">
+
+          <span
+            className="
+              text-teal-600
+              dark:text-teal-400
+
+              transition-colors
+              duration-500
+            "
+          >
             (B.Sc. Computer Science)
           </span>
         </motion.h2>
@@ -248,10 +298,15 @@ const textVariant = {
             mt-3
             text-sm
             leading-6
-            text-gray-500
+
+            text-slate-600
+            dark:text-gray-500
+
             transition-colors
             duration-300
-            group-hover:text-gray-400
+
+            group-hover:text-slate-700
+            dark:group-hover:text-gray-400
           "
         >
           Sion West, Mumbai – 400022
@@ -266,18 +321,30 @@ const textVariant = {
             grid-cols-3
             gap-3
             border-y
-            border-white/10
+
+            border-slate-200
+            dark:border-white/10
+
             py-6
+
+            transition-colors
+            duration-500
           "
         >
-          <div className="flex flex-col items-center justify-center" >
+          <div className="flex flex-col items-center justify-center">
             <p
               className="
                 new-rocker-font
                 text-2xl
                 font-bold
-                text-teal-400
+
+                text-teal-600
+                dark:text-teal-400
+
                 sm:text-3xl
+
+                transition-colors
+                duration-500
               "
             >
               8.83
@@ -291,22 +358,35 @@ const textVariant = {
                 uppercase
                 font-bold
                 tracking-[0.14em]
-                text-gray-300
-                sm:text-base lg:text-lg
+
+                text-slate-600
+                dark:text-gray-300
+
+                sm:text-base
+                lg:text-lg
+
+                transition-colors
+                duration-500
               "
             >
               CGPA
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center" >
+          <div className="flex flex-col items-center justify-center">
             <p
               className="
                 new-rocker-font
                 text-2xl
                 font-bold
-                text-teal-400
+
+                text-teal-600
+                dark:text-teal-400
+
                 sm:text-3xl
+
+                transition-colors
+                duration-500
               "
             >
               2026
@@ -314,28 +394,41 @@ const textVariant = {
 
             <p
               className="
-               mt-1
+                mt-1
                 font-mono
                 text-[13px]
                 uppercase
                 font-bold
                 tracking-[0.14em]
-                text-gray-300
-                sm:text-base lg:text-lg
+
+                text-slate-600
+                dark:text-gray-300
+
+                sm:text-base
+                lg:text-lg
+
+                transition-colors
+                duration-500
               "
             >
               Graduated
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-center" >
+          <div className="flex flex-col items-center justify-center">
             <p
               className="
                 new-rocker-font
                 text-2xl
                 font-bold
-                text-teal-400
+
+                text-teal-600
+                dark:text-teal-400
+
                 sm:text-3xl
+
+                transition-colors
+                duration-500
               "
             >
               3
@@ -349,8 +442,15 @@ const textVariant = {
                 uppercase
                 font-bold
                 tracking-[0.14em]
-                text-gray-300
-                sm:text-base lg:text-lg
+
+                text-slate-600
+                dark:text-gray-300
+
+                sm:text-base
+                lg:text-lg
+
+                transition-colors
+                duration-500
               "
             >
               Years
@@ -368,20 +468,46 @@ const textVariant = {
             gap-2
             rounded-full
             border
-            border-teal-400/20
-            bg-teal-400/[0.05]
+
+            border-teal-500/20
+            bg-teal-500/[0.05]
+            text-teal-600
+
+            dark:border-teal-400/20
+            dark:bg-teal-400/[0.05]
+            dark:text-teal-300
+
             px-4
             py-2
             text-xs
             font-medium
-            text-teal-300
+
             transition-all
             duration-300
-            hover:border-teal-400/40
-            hover:bg-teal-400/[0.08]
+
+            hover:border-teal-500/40
+            hover:bg-teal-500/[0.08]
+
+            dark:hover:border-teal-400/40
+            dark:hover:bg-teal-400/[0.08]
           "
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(45,212,191,0.8)]" />
+          <span
+            className="
+              h-1.5
+              w-1.5
+              rounded-full
+
+              bg-teal-600
+              dark:bg-teal-400
+
+              shadow-[0_0_8px_rgba(20,184,166,0.7)]
+              dark:shadow-[0_0_8px_rgba(45,212,191,0.8)]
+
+              transition-colors
+              duration-500
+            "
+          />
 
           Graduated — May 2026
         </motion.div>
@@ -390,4 +516,5 @@ const textVariant = {
   );
 }
 
-export default React.memo(EducationDetails)
+export default React.memo(EducationDetails);
+

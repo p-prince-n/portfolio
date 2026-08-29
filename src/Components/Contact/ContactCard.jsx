@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+
 const cardVariant = {
   hidden: {
     opacity: 0,
@@ -61,7 +62,6 @@ export default function ContactCard({
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-
     const rotateX = ((y - centerY) / centerY) * -7;
     const rotateY = ((x - centerX) / centerX) * 7;
 
@@ -116,21 +116,29 @@ export default function ContactCard({
       className="
         group
         relative
-        
         overflow-hidden
         rounded-2xl
         border
-        border-white/10
-        bg-white/[0.035]
+
+        border-slate-200
+        bg-white
+
+        dark:border-white/10
+        dark:bg-white/[0.035]
+
         p-4
         backdrop-blur-xl
 
-        transition-colors
+        transition-all
         duration-500
 
-        hover:border-teal-400/30
-        hover:bg-white/[0.055]
-        hover:shadow-[0_20px_60px_-25px_rgba(45,212,191,0.45)]
+        hover:border-teal-500/30
+        hover:bg-slate-50
+        hover:shadow-[0_20px_60px_-25px_rgba(20,184,166,0.25)]
+
+        dark:hover:border-teal-400/30
+        dark:hover:bg-white/[0.055]
+        dark:hover:shadow-[0_20px_60px_-25px_rgba(45,212,191,0.45)]
 
         sm:p-5
       "
@@ -138,20 +146,26 @@ export default function ContactCard({
       {/* ================================
           MAIN GRADIENT
       ================================= */}
-
       <div
         className="
           pointer-events-none
           absolute
           inset-0
           rounded-2xl
+
           bg-gradient-to-br
-          from-teal-400/[0.07]
+          from-teal-500/[0.05]
           via-transparent
-          to-violet-500/[0.08]
+          to-violet-500/[0.06]
+
+          dark:from-teal-400/[0.07]
+          dark:via-transparent
+          dark:to-violet-500/[0.08]
+
           opacity-0
           transition-opacity
           duration-500
+
           group-hover:opacity-100
         "
       />
@@ -159,7 +173,6 @@ export default function ContactCard({
       {/* ================================
           MOUSE GLOW
       ================================= */}
-
       <div
         className="
           pointer-events-none
@@ -169,18 +182,23 @@ export default function ContactCard({
           h-32
           w-32
           rounded-full
-          bg-teal-400/10
+
+          bg-teal-500/10
+          dark:bg-teal-400/10
+
           blur-3xl
+
           transition-all
           duration-500
-          group-hover:bg-teal-400/20
+
+          group-hover:bg-teal-500/20
+          dark:group-hover:bg-teal-400/20
         "
       />
 
       {/* ================================
           TOP EDGE GLOW
       ================================= */}
-
       <div
         className="
           pointer-events-none
@@ -189,13 +207,18 @@ export default function ContactCard({
           right-0
           top-0
           h-px
+
           bg-gradient-to-r
           from-transparent
-          via-teal-400/70
+          via-teal-500/70
           to-transparent
+
+          dark:via-teal-400/70
+
           opacity-40
           transition-opacity
           duration-500
+
           group-hover:opacity-100
         "
       />
@@ -203,7 +226,6 @@ export default function ContactCard({
       {/* ================================
           CONTENT
       ================================= */}
-
       <div
         className="
           relative
@@ -217,7 +239,6 @@ export default function ContactCard({
         }}
       >
         {/* ICON */}
-
         <motion.div
           variants={contentVariant}
           className="
@@ -229,24 +250,33 @@ export default function ContactCard({
             justify-center
             rounded-xl
             border
-            border-teal-400/20
-            bg-teal-400/[0.06]
-            text-teal-300
+
+            border-teal-500/20
+            bg-teal-500/[0.06]
+            text-teal-600
+
+            dark:border-teal-400/20
+            dark:bg-teal-400/[0.06]
+            dark:text-teal-300
 
             transition-all
             duration-300
 
             group-hover:scale-110
-            group-hover:border-teal-400/40
-            group-hover:bg-teal-400/10
-            group-hover:text-teal-200
+
+            group-hover:border-teal-500/40
+            group-hover:bg-teal-500/10
+            group-hover:text-teal-600
+
+            dark:group-hover:border-teal-400/40
+            dark:group-hover:bg-teal-400/10
+            dark:group-hover:text-teal-200
           "
         >
           <Icon size={19} strokeWidth={1.7} />
         </motion.div>
 
         {/* TEXT */}
-
         <div className="min-w-0 flex-1">
           <motion.p
             variants={contentVariant}
@@ -255,10 +285,15 @@ export default function ContactCard({
               text-[10px]
               uppercase
               tracking-[0.18em]
-              text-gray-500
+
+              text-slate-500
+              dark:text-gray-500
+
               transition-colors
               duration-300
-              group-hover:text-teal-400/80
+
+              group-hover:text-teal-600
+              dark:group-hover:text-teal-400/80
             "
           >
             {label}
@@ -271,11 +306,18 @@ export default function ContactCard({
               truncate
               text-sm
               font-medium
-              text-gray-200
+
+              text-slate-800
+              dark:text-gray-200
+
               transition-all
               duration-300
+
               group-hover:translate-x-1
-              group-hover:text-white
+              group-hover:text-slate-950
+
+              dark:group-hover:text-white
+
               sm:text-[15px]
             "
           >
@@ -284,18 +326,24 @@ export default function ContactCard({
         </div>
 
         {/* ARROW */}
-
         <motion.span
           variants={contentVariant}
           className="
             hidden
             text-lg
-            text-teal-400/70
+
+            text-teal-600/70
+            dark:text-teal-400/70
+
             transition-all
             duration-300
+
             group-hover:translate-x-1
             group-hover:-translate-y-1
-            group-hover:text-teal-300
+
+            group-hover:text-teal-600
+            dark:group-hover:text-teal-300
+
             sm:block
           "
         >
@@ -320,3 +368,4 @@ export default function ContactCard({
 
   return CardContent;
 }
+

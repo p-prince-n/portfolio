@@ -11,50 +11,6 @@ import {
 import Header from "./Header";
 
 
-
-
-const cardVariant = {
-  hidden: {
-    opacity: 0,
-    y: 70,
-    scale: 0.96,
-    filter: "blur(6px)",
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-
-
-const infoVariant = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-    filter: "blur(6px)",
-  },
-
-  visible: {
-    opacity: 1,
-    x: 0,
-    filter: "blur(0px)",
-
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
 const EXPERIENCES = [
   {
     icon: Code2,
@@ -94,27 +50,90 @@ const EXPERIENCES = [
 ];
 
 
+const cardVariant = {
+  hidden: {
+    opacity: 0,
+    y: 70,
+    scale: 0.96,
+    filter: "blur(6px)",
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const infoVariant = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+    filter: "blur(6px)",
+  },
+
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export default function Expreience() {
   return (
     <section
-      
-      className="w-full overflow-hidden  px-5  sm:px-8 md:px-10 lg:px-16 py-5 md:py-6 lg:py-10"
+      className="
+        w-full
+        overflow-hidden
+        px-5
+        py-5
+        sm:px-8
+        md:px-10
+        md:py-6
+        lg:px-16
+        lg:py-10
+
+        transition-colors
+        duration-500
+      "
     >
-      <Header label={"Work Experience"} id={"experience"} header={<>
-        Professional &nbsp;&nbsp;
+      <Header
+        label={"Work Experience"}
+        id={"experience"}
+        header={
+          <>
+            Professional &nbsp;&nbsp;
+            <span
+              className="
+                text-slate-800
+                dark:text-white
 
-          <span className="text-white">
-            Journey
-          </span>
-        </>} description={"A glimpse into the projects, systems, and technologies I've worked with while building production-ready frontend applications."} />
-
-     
-
+                transition-colors
+                duration-500
+                ease-in-out
+              "
+            >
+              Journey
+            </span>
+          </>
+        }
+        description={
+          "A glimpse into the projects, systems, and technologies I've worked with while building production-ready frontend applications."
+        }
+      />
 
       {/* =================================
           MAIN EXPERIENCE LAYOUT
       ================================= */}
-
       <div
         className="
           mx-auto
@@ -128,12 +147,9 @@ export default function Expreience() {
           xl:gap-16
         "
       >
-
-
         {/* =================================
             LEFT SIDE — EXPERIENCE INFO
         ================================= */}
-
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -143,7 +159,6 @@ export default function Expreience() {
           }}
           variants={{
             hidden: {},
-
             visible: {
               transition: {
                 staggerChildren: 0.14,
@@ -159,9 +174,7 @@ export default function Expreience() {
             lg:h-fit
           "
         >
-
           {/* Internship label */}
-
           <motion.p
             variants={infoVariant}
             className="
@@ -170,16 +183,21 @@ export default function Expreience() {
               text-xs
               uppercase
               tracking-[0.2em]
-              text-teal-400
+
+              text-teal-600
+              dark:text-teal-400
+
               sm:text-sm
+
+              transition-colors
+              duration-500
+              ease-in-out
             "
           >
             Internship
           </motion.p>
 
-
           {/* Designation */}
-
           <motion.h2
             variants={infoVariant}
             className="
@@ -188,32 +206,42 @@ export default function Expreience() {
               text-3xl
               font-bold
               leading-tight
-              text-white
+
+              text-slate-900
+              dark:text-white
+
               sm:text-4xl
+
+              transition-colors
+              duration-500
+              ease-in-out
             "
           >
             Frontend Developer
           </motion.h2>
 
-
           {/* Company */}
-
           <motion.p
             variants={infoVariant}
             className="
               mt-2
               text-lg
               font-semibold
-              text-teal-400
+
+              text-teal-600
+              dark:text-teal-400
+
               sm:text-xl
+
+              transition-colors
+              duration-500
+              ease-in-out
             "
           >
             UpToSkills
           </motion.p>
 
-
           {/* Meta information */}
-
           <motion.div
             variants={infoVariant}
             className="
@@ -222,46 +250,90 @@ export default function Expreience() {
               flex-col
               gap-3
               text-sm
-              text-gray-400
+
+              text-slate-600
+              dark:text-gray-400
+
+              transition-colors
+              duration-500
+              ease-in-out
             "
           >
-
             <div className="flex items-center gap-3">
-              <span className="text-teal-400">▣</span>
+              <span
+                className="
+                  text-teal-600
+                  dark:text-teal-400
+                  transition-colors
+                  duration-500
+                "
+              >
+                ▣
+              </span>
               <span>December 2025 — March 2026</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-teal-400">⌖</span>
+              <span
+                className="
+                  text-teal-600
+                  dark:text-teal-400
+                  transition-colors
+                  duration-500
+                "
+              >
+                ⌖
+              </span>
               <span>Delhi · Remote</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-teal-400">◷</span>
+              <span
+                className="
+                  text-teal-600
+                  dark:text-teal-400
+                  transition-colors
+                  duration-500
+                "
+              >
+                ◷
+              </span>
               <span>3 Months Internship</span>
             </div>
-
           </motion.div>
 
-
           {/* Divider */}
-
           <motion.div
             variants={infoVariant}
-            className="my-7 h-px w-full bg-white/10"
+            className="
+              my-7
+              h-px
+              w-full
+
+              bg-slate-200
+              dark:bg-white/10
+
+              transition-colors
+              duration-500
+            "
           />
 
-
           {/* Description */}
-
           <motion.p
             variants={infoVariant}
             className="
               max-w-xl
               text-sm
               leading-7
-              text-gray-400
+
+              text-slate-600
+              dark:text-gray-400
+
               sm:text-base
+
+              transition-colors
+              duration-500
+              ease-in-out
             "
           >
             Worked remotely as a Frontend Developer, contributing to
@@ -270,14 +342,11 @@ export default function Expreience() {
             integrations.
           </motion.p>
 
-
           {/* Technology chips */}
-
           <motion.div
             variants={infoVariant}
             className="mt-6 flex flex-wrap gap-2"
           >
-
             {[
               "React.js",
               "Framer Motion",
@@ -293,32 +362,40 @@ export default function Expreience() {
                 className="
                   rounded-lg
                   border
-                  border-white/10
-                  bg-white/[0.03]
+
+                  border-slate-200
+                  bg-slate-50
+                  text-slate-600
+
+                  dark:border-white/10
+                  dark:bg-white/[0.03]
+                  dark:text-gray-300
+
                   px-3
                   py-1.5
                   text-xs
-                  text-gray-300
+
                   transition-all
                   duration-300
-                  hover:border-teal-400/30
-                  hover:bg-teal-400/[0.06]
-                  hover:text-teal-300
+
+                  hover:border-teal-500/30
+                  hover:bg-teal-500/[0.06]
+                  hover:text-teal-600
+
+                  dark:hover:border-teal-400/30
+                  dark:hover:bg-teal-400/[0.06]
+                  dark:hover:text-teal-300
                 "
               >
                 {tech}
               </span>
             ))}
-
           </motion.div>
-
         </motion.div>
-
 
         {/* =================================
             RIGHT SIDE — EXPERIENCE CARDS
         ================================= */}
-
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -328,7 +405,6 @@ export default function Expreience() {
           }}
           variants={{
             hidden: {},
-
             visible: {
               transition: {
                 delayChildren: 0.25,
@@ -343,179 +419,192 @@ export default function Expreience() {
             sm:grid-cols-2
           "
         >
+          {EXPERIENCES.map(({ icon: Icon, title, desc }) => (
+            <motion.div
+              key={title}
+              variants={cardVariant}
+              whileHover={{
+                y: -8,
+                rotateX: 3,
+                rotateY: -3,
+                scale: 1.015,
+              }}
+              transition={{
+                duration: 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              style={{
+                transformPerspective: 1000,
+              }}
+              className="
+                group
+                relative
+                min-h-[190px]
+                overflow-hidden
+                rounded-2xl
+                border
 
-          {EXPERIENCES.map(
-            ({ icon: Icon, title, desc }) => (
-              <motion.div
-                key={title}
-                variants={cardVariant}
+                border-slate-200
+                bg-white
+                p-5
 
-                /* 3D hover */
-                whileHover={{
-                  y: -8,
-                  rotateX: 3,
-                  rotateY: -3,
-                  scale: 1.015,
-                }}
+                dark:border-white/10
+                dark:bg-white/[0.035]
 
-                transition={{
-                  duration: 0.35,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                backdrop-blur-md
 
-                style={{
-                  transformPerspective: 1000,
-                }}
+                transition-all
+                duration-500
+                ease-out
 
+                hover:border-teal-500/40
+                hover:bg-slate-50
+                hover:shadow-[0_20px_50px_-20px_rgba(20,184,166,0.25)]
+
+                dark:hover:border-teal-400/40
+                dark:hover:bg-white/[0.06]
+                dark:hover:shadow-[0_20px_50px_-20px_rgba(45,212,191,0.35)]
+              "
+            >
+              {/* Gradient overlay */}
+              <div
                 className="
-                  group
-                  relative
-                  min-h-[190px]
-                  overflow-hidden
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.035]
-                  p-5
-                  backdrop-blur-md
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  opacity-0
+                  transition-opacity
+                  duration-500
+                  group-hover:opacity-100
+                "
+              >
+                <div
+                  className="
+                    absolute
+                    -inset-px
+                    rounded-2xl
+                    bg-gradient-to-br
+
+                    from-teal-500/10
+                    via-transparent
+                    to-violet-500/10
+
+                    dark:from-teal-400/10
+                    dark:via-transparent
+                    dark:to-violet-500/10
+                  "
+                />
+              </div>
+
+              {/* Top glow */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  -right-10
+                  -top-10
+                  h-28
+                  w-28
+                  rounded-full
+
+                  bg-teal-500/10
+                  blur-3xl
+
+                  dark:bg-teal-400/10
 
                   transition-all
                   duration-500
-                  ease-out
 
-                  hover:border-teal-400/40
-                  hover:bg-white/[0.06]
-                  hover:shadow-[0_20px_50px_-20px_rgba(45,212,191,0.35)]
+                  group-hover:bg-teal-500/20
+                  dark:group-hover:bg-teal-400/20
                 "
-              >
+              />
 
-                {/* Gradient overlay */}
-
+              {/* Card content */}
+              <div className="relative z-10">
+                {/* Icon */}
                 <div
                   className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    opacity-0
-                    transition-opacity
-                    duration-500
-                    group-hover:opacity-100
+                    mb-7
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+
+                    border-slate-200
+                    bg-slate-100
+                    text-teal-600
+
+                    dark:border-white/10
+                    dark:bg-white/[0.05]
+                    dark:text-teal-300
+
+                    transition-all
+                    duration-300
+
+                    group-hover:scale-110
+
+                    group-hover:border-teal-500/40
+                    group-hover:bg-teal-500/10
+                    group-hover:text-teal-600
+
+                    dark:group-hover:border-teal-400/40
+                    dark:group-hover:bg-teal-400/10
+                    dark:group-hover:text-teal-200
                   "
                 >
-                  <div
-                    className="
-                      absolute
-                      -inset-px
-                      rounded-2xl
-                      bg-gradient-to-br
-                      from-teal-400/10
-                      via-transparent
-                      to-violet-500/10
-                    "
-                  />
+                  <Icon size={21} strokeWidth={1.7} />
                 </div>
 
-
-                {/* Top glow */}
-
-                <div
+                {/* Title */}
+                <h3
                   className="
-                    pointer-events-none
-                    absolute
-                    -right-10
-                    -top-10
-                    h-28
-                    w-28
-                    rounded-full
-                    bg-teal-400/10
-                    blur-3xl
+                    text-lg
+                    font-semibold
+
+                    text-slate-900
+                    dark:text-white
+
                     transition-all
-                    duration-500
-                    group-hover:bg-teal-400/20
+                    duration-300
+
+                    group-hover:translate-x-1
+                    group-hover:text-teal-600
+
+                    dark:group-hover:text-teal-200
                   "
-                />
+                >
+                  {title}
+                </h3>
 
+                {/* Description */}
+                <p
+                  className="
+                    mt-2
+                    text-sm
+                    leading-6
 
-                {/* Card content */}
+                    text-slate-600
+                    dark:text-gray-400
 
-                <div className="relative z-10">
+                    transition-colors
+                    duration-300
 
-                  {/* Icon */}
-
-                  <div
-                    className="
-                      mb-7
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-white/10
-                      bg-white/[0.05]
-                      text-teal-300
-
-                      transition-all
-                      duration-300
-
-                      group-hover:scale-110
-                      group-hover:border-teal-400/40
-                      group-hover:bg-teal-400/10
-                      group-hover:text-teal-200
-                    "
-                  >
-                    <Icon
-                      size={21}
-                      strokeWidth={1.7}
-                    />
-                  </div>
-
-
-                  {/* Title */}
-
-                  <h3
-                    className="
-                      text-lg
-                      font-semibold
-                      text-white
-                      transition-all
-                      duration-300
-
-                      group-hover:translate-x-1
-                      group-hover:text-teal-200
-                    "
-                  >
-                    {title}
-                  </h3>
-
-
-                  {/* Description */}
-
-                  <p
-                    className="
-                      mt-2
-                      text-sm
-                      leading-6
-                      text-gray-400
-                      transition-colors
-                      duration-300
-                      group-hover:text-gray-300
-                    "
-                  >
-                    {desc}
-                  </p>
-
-                </div>
-
-              </motion.div>
-            )
-          )}
-
+                    group-hover:text-slate-700
+                    dark:group-hover:text-gray-300
+                  "
+                >
+                  {desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
-
       </div>
-
     </section>
   );
 }
+

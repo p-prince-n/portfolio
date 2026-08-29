@@ -1,18 +1,41 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { GraduationCap, Home, Mail, MapPin, Phone, Sparkles, User } from "lucide-react";
+import { FaGithub, FaLaptopCode, FaLinkedinIn, FaRocket } from "react-icons/fa";
 
-const navLinks = [
+const navItems = [
   {
-    name: "Work",
-    link: "#work",
-  },
-  {
-    name: "Experience",
-    link: "#experience",
+    name: "Home",
+    href: "#hero",
+    icon: Home,
   },
   {
     name: "Skills",
-    link: "#skills",
+    href: "#skills",
+    icon: Sparkles,
+  },
+  {
+    name: "About",
+    href: "#about",
+    icon: User,
+  },
+  {
+    name: "Technology",
+    href: "#tech-skills",
+    icon: FaLaptopCode,
+  },
+  {
+    name: "Education",
+    href: "#education",
+    icon: GraduationCap,
+  },
+  {
+    name: "Experience",
+    href: "#experience",
+    icon: FaRocket,
+  },
+  {
+    name: "Contact",
+    href: "#contact",
+    icon: Mail,
   },
 ];
 const typewriterRoles = [
@@ -150,6 +173,6 @@ const showProjectOverView = [
 export {
   words,
   typewriterRoles,
-  navLinks,
+  navItems,
   contactItems
 };

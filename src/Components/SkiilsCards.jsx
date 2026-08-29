@@ -63,36 +63,69 @@ const CARDS = [
 ];
 
 
+
 const cardContainerVariant = {
   hidden: {},
-  visible: { transition: { delayChildren: 0.3, staggerChildren: 0.28 } },
+  visible: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.28,
+    },
+  },
 };
+
 const cardVariant = {
-  hidden: { opacity: 0, y: 70, filter: "blur(6px)" },
+  hidden: {
+    opacity: 0,
+    y: 70,
+    filter: "blur(6px)",
+  },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 1.0,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 };
 
 export default function SkillCards() {
   return (
-    <div id="skills" className="w-full sm:px-10 lg:px-16 py-5 md:py-6 lg:py-10">
-      <Header label={"What I Build"} header={<>
-        Skills
-          <span className="imperial-script-regular text-white text-5xl font-bold">
-            
-            &nbsp;&amp;&nbsp;&nbsp;
-          </span>
-          Focus Areas
-        </>} description={"A snapshot of the stack and systems I work across, from interface to infrastructure."}  />
-     
-     
-   
+    <div
+      id="skills"
+      className="w-full py-5 sm:px-10 md:py-6 lg:px-16 lg:py-10"
+    >
+      <Header
+        label={"What I Build"}
+        header={
+          <>
+            Skills
+            <span
+              className="
+                imperial-script-regular
+                text-amber-600
+                dark:text-white
+                text-5xl
+                font-bold
+                transition-colors
+                duration-500
+                ease-in-out
+              "
+            >
+              &nbsp;&amp;&nbsp;&nbsp;
+            </span>
+            Focus Areas
+          </>
+        }
+        description={
+          "A snapshot of the stack and systems I work across, from interface to infrastructure."
+        }
+      />
+
       <motion.div
-        className="mx-auto mt-5 lg:max-w-7/8 md:mt-10 "
+        className="mx-auto mt-5 md:mt-10 lg:max-w-7/8"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
@@ -103,40 +136,156 @@ export default function SkillCards() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        
         {CARDS.map(({ tag, icon: Icon, title, desc }, i) => (
           <motion.div
             key={title}
-             className=" card-rise group relative overflow-hidden rounded-2xl border border-white/10 bg-white/3 p-6 backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-teal-400/40 hover:bg-white/[0.06] hover:shadow-[0_0_35px_-10px_rgba(45,212,191,0.35)] cursor-pointer "
-             variants={cardVariant}
+            className="
+              card-rise
+              group
+              relative
+              cursor-pointer
+              overflow-hidden
+              rounded-2xl
+              border
+
+              border-slate-200
+              bg-white
+              p-6
+
+              dark:border-white/10
+              dark:bg-white/3
+
+              backdrop-blur-sm
+              transition-all
+              duration-300
+              ease-out
+
+              hover:-translate-y-1.5
+
+              hover:border-teal-500/40
+              hover:bg-slate-50
+              hover:shadow-[0_0_35px_-10px_rgba(20,184,166,0.25)]
+
+              dark:hover:border-teal-400/40
+              dark:hover:bg-white/[0.06]
+              dark:hover:shadow-[0_0_35px_-10px_rgba(45,212,191,0.35)]
+            "
+            variants={cardVariant}
             style={{
               animationDelay: `${i * 90}ms`,
             }}
           >
-          
-           
-            <div className=" pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 ">
-              
-              <div className=" absolute -inset-px rounded-2xl bg-gradient-to-br from-teal-400/10 via-transparent to-violet-500/10 " />
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-0
+                opacity-0
+                transition-opacity
+                duration-500
+                group-hover:opacity-100
+              "
+            >
+              <div
+                className="
+                  absolute
+                  -inset-px
+                  rounded-2xl
+                  bg-gradient-to-br
+                  from-teal-500/10
+                  via-transparent
+                  to-violet-500/10
+                  dark:from-teal-400/10
+                  dark:via-transparent
+                  dark:to-violet-500/10
+                "
+              />
             </div>
+
             <div className="skill-card-inner relative">
-              
-              <div className=" skill-card-icon inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-teal-400 transition-all duration-300 group-hover:scale-110 group-hover:border-teal-400/40 group-hover:text-teal-300 ">
-                
+              <div
+                className="
+                  skill-card-icon
+                  inline-flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-xl
+                  border
+
+                  border-slate-200
+                  bg-slate-100
+                  text-teal-600
+
+                  dark:border-white/10
+                  dark:bg-white/[0.04]
+                  dark:text-teal-400
+
+                  transition-all
+                  duration-300
+
+                  group-hover:scale-110
+                  group-hover:border-teal-500/40
+                  group-hover:text-teal-600
+
+                  dark:group-hover:border-teal-400/40
+                  dark:group-hover:text-teal-300
+                "
+              >
                 <Icon size={20} strokeWidth={1.75} />
               </div>
+
               <div>
-               
-                <p className=" mb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-violet-400/80 ">
-                  
+                <p
+                  className="
+                    mb-1
+                    font-mono
+                    text-[10px]
+                    uppercase
+                    tracking-[0.2em]
+
+                    text-violet-600/80
+                    dark:text-violet-400/80
+
+                    transition-colors
+                    duration-500
+                    ease-in-out
+                  "
+                >
                   {tag}
                 </p>
-                <h3 className="mb-2 text-lg font-semibold text-white">
-                  
+
+                <h3
+                  className="
+                    mb-2
+                    text-lg
+                    font-semibold
+
+                    text-slate-900
+                    dark:text-white
+
+                    transition-colors
+                    duration-500
+                    ease-in-out
+                  "
+                >
                   {title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-400">
-                  
+
+                <p
+                  className="
+                    text-sm
+                    leading-relaxed
+
+                    text-slate-600
+                    dark:text-gray-400
+
+                    transition-colors
+                    duration-500
+                    ease-in-out
+                  "
+                >
                   {desc}
                 </p>
               </div>
@@ -147,3 +296,5 @@ export default function SkillCards() {
     </div>
   );
 }
+
+
