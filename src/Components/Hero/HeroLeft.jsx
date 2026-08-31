@@ -1,8 +1,7 @@
-
 import { motion } from "framer-motion";
 import React from "react";
 
-import { words } from "../../constants/index.js";
+import { LinksData, words } from "../../constants/index.js";
 import TypeWriter from "./TypeWriter.jsx";
 import { MagneticButton } from "../AnimatedButton.jsx";
 import { Download, Mail } from "lucide-react";
@@ -76,18 +75,7 @@ const heroContainer = {
   },
 };
 
-const LinksData = [
-  {
-    id: "github",
-    icons: <FaGithub />,
-    link: "https://www.github.com/p-prince-n",
-  },
-  {
-    id: "linkedin",
-    icons: <FaLinkedin />,
-    link: "https://www.linkedin.com/in/prince-prajapati-362806394",
-  },
-];
+
 
 const HeroLeft = () => {
   return (
@@ -550,75 +538,51 @@ const HeroLeft = () => {
               "
             >
               {LinksData.length > 0 &&
-                LinksData.map((item) => (
-                  <MagneticButton
-                    key={item.id}
-                    className="
-                      group
-                      relative
-                      isolate
-                      overflow-hidden
-                      inline-flex
-                      items-center
-                      justify-center
-                      gap-2
-                      rounded-full
-                      border
+    
+LinksData.map((item) => {
+  const Icon = item.icon;
 
-                      border-emerald-600
-                      dark:border-emerald-400
+  if (!Icon) return null;
 
-                      bg-transparent
-                      p-3
-                      cursor-pointer
-                      font-semibold
+  return (
+    <MagneticButton
+      key={item.name}
+      className="
+        group
+        relative
+        isolate
+        inline-flex
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-full
+        border
+        border-emerald-600
+        bg-transparent
+        p-3
+        text-xl
+        text-emerald-700
+        transition-all
+        duration-300
+        hover:scale-125
+        hover:text-black
+        dark:border-emerald-400
+        dark:text-emerald-400
+        dark:hover:text-black
+      "
+    >
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative z-10 flex items-center justify-center"
+      >
+        <Icon />
+      </a>
+    </MagneticButton>
+  );
+})}
 
-                      text-emerald-700
-                      dark:text-emerald-400
-
-                      transition-all
-                      duration-300
-
-                      before:absolute
-                      before:left-1/2
-                      before:top-1/2
-                      before:-z-10
-                      before:w-0
-                      before:h-0
-                      before:-translate-x-1/2
-                      before:-translate-y-1/2
-                      before:rounded-full
-
-                      before:bg-emerald-500
-                      dark:before:bg-emerald-400
-
-                      before:transition-all
-                      before:duration-500
-                      before:ease-out
-
-                      hover:before:w-full
-                      hover:before:h-full
-                      hover:text-black
-                      hover:scale-125
-
-                      shadow-[0_0_20px_rgba(16,185,129,0.08)]
-                      dark:shadow-[0_0_20px_rgba(52,211,153,0.08)]
-
-                      text-xl
-
-                      hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]
-                      dark:hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
-                    "
-                  >
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.icons}
-                    </a>
-                  </MagneticButton>
-                ))}
             </motion.div>
           </motion.div>
         </header>
@@ -628,4 +592,3 @@ const HeroLeft = () => {
 };
 
 export default React.memo(HeroLeft);
-

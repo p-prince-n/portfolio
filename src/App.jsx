@@ -15,6 +15,8 @@ import Contact from "./Components/Contact/Contact";
 
 import BackgroundAnimation from "./BackgroundAnimation";
 import { useTheme } from "./Context/ThemeContext";
+import Project from "./Components/Projects/Project";
+import Footer from "./Components/Footer";
 
 const Section = ({ id, children, className = "" }) => {
   return (
@@ -46,9 +48,9 @@ const App = () => {
           id="hero"
           className="flex min-h-screen  w-full items-center justify-center px-4 pt-28 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto -mt-10 grid w-full  grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="mx-auto md:-mt-10 grid  w-full  grid-cols-1 items-center md:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 -mt-15 md:mt-auto ">
               <HeroLeft />
             </div>
 
@@ -85,6 +87,14 @@ const App = () => {
             <TechArsenal />
           </div>
         </Section>
+        <Section
+          id="projects"
+          className="px-4 sm:px-6 lg:px-8 "
+        >
+          <div className="mx-auto w-full ">
+            <Project />
+          </div>
+        </Section>
 
         <Section
           id="education"
@@ -113,6 +123,7 @@ const App = () => {
             <Contact />
           </div>
         </Section>
+        <Footer/>
       </div>
     </div>
   );

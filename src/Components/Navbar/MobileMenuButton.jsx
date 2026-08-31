@@ -44,7 +44,7 @@ function MobileMenuButton({ mobileOpen, setMobileOpen }) {
         dark:hover:bg-white/10
         dark:hover:text-emerald-400
 
-        lg:hidden
+        min-[1120px]:hidden
       "
     >
       <AnimatePresence mode="wait" initial={false}>

@@ -1,129 +1,6 @@
-import { FolderKanban, GraduationCap, Home, Mail, MapPin, Phone, Sparkles, User } from "lucide-react";
-import { FaGithub, FaLaptopCode, FaLinkedin, FaLinkedinIn, FaRocket } from "react-icons/fa";
-
-const navItems = [
-  {
-    name: "Home",
-    href: "#hero",
-    icon: Home,
-  },
-  {
-    name: "Skills",
-    href: "#skills",
-    icon: Sparkles,
-  },
-  {
-    name: "About",
-    href: "#about",
-    icon: User,
-  },
-  {
-    name: "Technology",
-    href: "#tech-skills",
-    icon: FaLaptopCode,
-  },
-  {
-    name: "Projects",
-    href: "#projects",
-    icon: FolderKanban
-  },
-  {
-    name: "Education",
-    href: "#education",
-    icon: GraduationCap,
-  },
-  
-  {
-    name: "Experience",
-    href: "#experience",
-    icon: FaRocket,
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-    icon: Mail,
-  },
-];
-const typewriterRoles = [
-  "Full Stack Developer",
-  "MERN Stack Developer",
-  "Frontend Developer",
-  "Backend Developer",
-  "AI & LLM Developer",
-  "React.js Developer",
-  "Node.js Developer",
-  "Multi-Agent System Builder",
-  "API Developer",
-  "UI/UX Focused Engineer"
-];
-
-const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-];
-
-
-const contactItems = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "pp2358296@gmail.com",
-    href: "mailto:pp2358296@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 96533 51765",
-    href: "tel:+919653351765",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Mumbai, Maharashtra, India",
-  },
-  {
-    icon: FaGithub,
-    label: "GitHub",
-    value: "@p-prince-n",
-    href: "https://github.com/p-prince-n",
-  },
-  {
-    icon: FaLinkedinIn,
-    label: "LinkedIn",
-    value: "@prince-prajapati-362806394",
-    href: "https://www.linkedin.com/in/prince-prajapati-362806394",
-  },
-];
-
-const LinksData = [
-  {
-    id: "github",
-    icons: FaGithub,
-    link: "https://www.github.com/p-prince-n",
-  },
-  {
-    id: "linkedin",
-    icons: FaLinkedin,
-    link: "https://www.linkedin.com/in/prince-prajapati-362806394",
-  },
-  {
-    name: "Email",
-    icon: Mail,
-    href: "mailto:pp2358296@gmail.com",
-  },
-];
-
-
 const showProjectOverView = [
   {
     id: 1,
-    mobileImage: false,
 
     image: "/images/projectimages/neoai.png",
 
@@ -203,7 +80,6 @@ const showProjectOverView = [
   },
   {
     id:2,
-    mobileImage: false,
     image: "/images/projectimages/shopnova.png",
 
     browser: {
@@ -270,7 +146,6 @@ const showProjectOverView = [
   {
     id:3,
     image: "/images/projectimages/talkspace.png",
-    mobileImage: false,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -326,11 +201,17 @@ const showProjectOverView = [
         "Built with a MERN-based client-server architecture using React.js for the frontend, Node.js and Express.js for backend APIs, and MongoDB for persistent data storage. Real-time communication is handled through Socket.IO, while JWT-based authentication secures user sessions.",
     },
   },
- 
+  {
+    id: 4,
+    imagePath: "/images/projectimages/chattrix.png",
+    title: "Chattrix",
+    shortDesc:
+      "A Realtime Chat web app build with MERN Stack and TailwindCSS. One-to-One also One-to-Many communication .",
+    desc: "Modern UI with React + Socket + TailwindCSS ad user-friendly",
+  },
   {
     id:5,
     image: "/images/projectimages/chattrix.png",
-    mobileImage: false,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -389,7 +270,6 @@ const showProjectOverView = [
   {
     id:6,
     image: "/images/projectimages/amazonclone.jpg",
-    mobileImage: true,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -450,7 +330,6 @@ const showProjectOverView = [
   {
     id:7,
     image: "/images/projectimages/voiceassistant.jpg",
-    mobileImage: true,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -501,7 +380,6 @@ const showProjectOverView = [
   {
     id:8,
     image: "/images/projectimages/weatherapp.jpg",
-    mobileImage: true,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -558,7 +436,6 @@ const showProjectOverView = [
   {
     id:9,
     image: "/images/projectimages/singlist.png",
-    mobileImage: false,
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -620,8 +497,7 @@ const showProjectOverView = [
 
   {
     id:10,
-    image: "images/projectimages/codecraftsblog.png",
-    mobileImage: false,
+    image: "/images/projectimages/blog.png",
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -683,8 +559,7 @@ const showProjectOverView = [
   },
   {
     id:11,
-    image: "/images/projectimages/climato.png",
-    mobileImage: false,
+    image: "/images/projectimages/singlist.png",
 
     browser: {
       dots: ["#ef4444", "#f59e0b", "#22c55e"],
@@ -739,12 +614,3 @@ const showProjectOverView = [
   },
   
 ];
-
-export {
-  words,
-  typewriterRoles,
-  navItems,
-  contactItems,
-  showProjectOverView,
-  LinksData
-};

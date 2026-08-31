@@ -1,3 +1,4 @@
+
 import React from "react";
 import MobileNavItem from "./MobileNavItem";
 import { motion } from "framer-motion";
@@ -25,30 +26,23 @@ function MobileNav({ active, onNavigate }) {
         duration: 0.25,
         ease: "easeOut",
       }}
-      className="overflow-hidden lg:hidden"
+      className="overflow-hidden min-[1120px]:hidden"
     >
       <div
         className="
           mt-3
           rounded-2xl
           border
-
           border-slate-200
           bg-white/95
-
           dark:border-white/10
           dark:bg-black/90
-
           p-2
-
           shadow-xl
           shadow-slate-200/50
-
           dark:shadow-2xl
           dark:shadow-black/30
-
           backdrop-blur-xl
-
           transition-all
           duration-500
           ease-in-out
@@ -88,15 +82,12 @@ function MobileNav({ active, onNavigate }) {
           className="
             mt-2
             border-t
-
             border-slate-200
             dark:border-white/10
-
             px-4
             pb-1
             pt-3
             text-center
-
             transition-colors
             duration-500
           "
@@ -106,10 +97,8 @@ function MobileNav({ active, onNavigate }) {
               text-[9px]
               uppercase
               tracking-[0.2em]
-
               text-slate-500
               dark:text-gray-600
-
               transition-colors
               duration-500
             "
@@ -122,7 +111,5 @@ function MobileNav({ active, onNavigate }) {
   );
 }
 
+export default React.memo(MobileNav);
 
-
-
-export default React.memo(MobileNav)

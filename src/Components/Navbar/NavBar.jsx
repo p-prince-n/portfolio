@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import NavbarLogo from "./NavbarLogo";
 import DesktopNav from "./DesktopNav";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileNav from "./MobileNav";
 import { navItems } from "../../constants/index.js";
-
 
 export default function NavBar() {
   const [active, setActive] = useState("hero");
@@ -53,7 +51,7 @@ export default function NavBar() {
 
     if (!target) return;
 
-    // Close mobile menu FIRST
+    // Close mobile menu first
     setMobileOpen(false);
 
     // Update active item
@@ -79,7 +77,8 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      // Desktop starts at 1120px
+      if (window.innerWidth >= 1120) {
         setMobileOpen(false);
       }
     };
@@ -92,7 +91,7 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 1024;
+    const isMobile = window.innerWidth < 1120;
 
     if (mobileOpen && isMobile) {
       document.body.style.overflow = "hidden";
@@ -130,7 +129,6 @@ export default function NavBar() {
         z-50
         px-3
         pt-3
-
         sm:px-5
         xl:px-8
       "
@@ -141,32 +139,23 @@ export default function NavBar() {
           max-w-7xl
           rounded-2xl
           border
-
           border-slate-200
           bg-white/85
-
           dark:border-white/10
           dark:bg-black/75
-
           px-3
           py-2.5
-
           shadow-xl
           shadow-slate-200/40
-
           dark:shadow-2xl
           dark:shadow-black/20
-
           backdrop-blur-xl
-
           transition-all
           duration-500
-
           sm:px-4
           sm:py-3
         "
       >
-        {/* Main row */}
         <div
           className="
             flex
@@ -174,7 +163,6 @@ export default function NavBar() {
             items-center
             justify-between
             gap-2
-
             sm:min-h-11
             sm:gap-4
           "
@@ -195,7 +183,6 @@ export default function NavBar() {
               shrink-0
               items-center
               gap-1.5
-
               sm:gap-2
             "
           >
@@ -221,5 +208,3 @@ export default function NavBar() {
     </motion.header>
   );
 }
-
-
