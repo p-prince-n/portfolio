@@ -78,6 +78,8 @@ const heroContainer = {
 
 
 const HeroLeft = () => {
+  console.log(LinksData);
+  
   return (
     <>
       {/* Background */}
@@ -528,62 +530,70 @@ const HeroLeft = () => {
 
             {/* Social Links */}
 
-            <motion.div
-              variants={bottomVariant}
-              className="
-                flex
-                flex-row
-                gap-5
-                w-full
-              "
-            >
-              {LinksData.length > 0 &&
-    
-LinksData.map((item) => {
-  const Icon = item.icon;
+          <motion.div
+  variants={bottomVariant}
+  className="flex flex-row gap-5 w-full"
+>
+  {LinksData?.map((item) => {
+    const Icon = item.icons;
 
-  if (!Icon) return null;
+    return (
+      <MagneticButton
+        key={item.id}
+        className="
+          group
+          relative
+          isolate
+          overflow-hidden
+          inline-flex
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-emerald-400
+          bg-transparent
+          p-3
+          cursor-pointer
+          text-emerald-400
+          transition-all
+          duration-300
 
-  return (
-    <MagneticButton
-      key={item.name}
-      className="
-        group
-        relative
-        isolate
-        inline-flex
-        items-center
-        justify-center
-        overflow-hidden
-        rounded-full
-        border
-        border-emerald-600
-        bg-transparent
-        p-3
-        text-xl
-        text-emerald-700
-        transition-all
-        duration-300
-        hover:scale-125
-        hover:text-black
-        dark:border-emerald-400
-        dark:text-emerald-400
-        dark:hover:text-black
-      "
-    >
-      <a
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative z-10 flex items-center justify-center"
+          before:absolute
+          before:left-1/2
+          before:top-1/2
+          before:-z-10
+          before:w-0
+          before:h-0
+          before:-translate-x-1/2
+          before:-translate-y-1/2
+          before:rounded-full
+          before:bg-emerald-400
+          before:transition-all
+          before:duration-500
+          before:ease-out
+
+          hover:before:w-full
+          hover:before:h-full
+          hover:text-black
+          hover:scale-125
+
+          shadow-[0_0_20px_rgba(52,211,153,0.08)]
+          text-xl
+          hover:shadow-[0_0_30px_rgba(52,211,153,0.35)]
+        "
       >
-        <Icon />
-      </a>
-    </MagneticButton>
-  );
-})}
-
-            </motion.div>
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={item.name}
+        >
+          <Icon />
+        </a>
+      </MagneticButton>
+    );
+  })}
+</motion.div>
           </motion.div>
         </header>
       </motion.div>

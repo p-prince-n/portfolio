@@ -42,7 +42,7 @@ export default function Education() {
         relative
         w-full
         overflow-hidden
-        px-5
+        px-2
         py-5
         md:py-6
         lg:py-10
@@ -102,18 +102,20 @@ export default function Education() {
         header={
           <>
             Education{" "}
-            <span
+             <span
               className="
-                text-teal-600
-                dark:text-teal-400
-
+                imperial-script-regular
+                text-black
+                dark:text-white
+                font-bold
                 transition-colors
                 duration-500
                 ease-in-out
               "
             >
-              & Learning
-            </span>
+              &nbsp;&amp;&nbsp;&nbsp;
+            </span> Learning
+            
           </>
         }
         description={

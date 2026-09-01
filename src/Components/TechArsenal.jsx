@@ -1,159 +1,12 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  LayoutGrid,
-  Code2,
-  MonitorSmartphone,
-  Server,
-  Database,
-  Library,
-  Wrench,
-} from "lucide-react";
 
-import {
-  FaJava,
-  FaPython,
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaBootstrap,
-  FaDocker,
-  FaGitAlt,
-  FaGithub,
-  FaAws,
-} from "react-icons/fa";
 
-import {
-  SiJavascript,
-  SiNextdotjs,
-  SiRedux,
-  // SiZustand,
-  SiTailwindcss,
-  SiExpress,
-  SiFastapi,
-  SiSocketdotio,
-  SiMongodb,
-  SiMysql,
-  SiPostgresql,
-  SiRedis,
-  SiLangchain,
-  SiFramer,
-  SiPostman,
-  SiNginx,
-} from "react-icons/si";
+
 import Header from "./Header";
+import { SKILLS, CATEGORIES } from "../constants/index.js";
 
-const SKILLS = [
-  { name: "Java", category: "programming", percentage: 75, icon: FaJava },
-  {
-    name: "JavaScript (ES6+)",
-    category: "programming",
-    percentage: 90,
-    icon: SiJavascript,
-  },
-  { name: "Python", category: "programming", percentage: 80, icon: FaPython },
-  { name: "SQL", category: "programming", percentage: 80, icon: null },
-  { name: "Dart", category: "programming", percentage: 65, icon: null },
 
-  { name: "React.js", category: "frontend", percentage: 90, icon: FaReact },
-  { name: "Next.js", category: "frontend", percentage: 80, icon: SiNextdotjs },
-  {
-    name: "Redux Toolkit",
-    category: "frontend",
-    percentage: 85,
-    icon: SiRedux,
-  },
-  // { name: "Zustand", category: "frontend", percentage: 80, icon: SiZustand },
-  {
-    name: "Tailwind CSS",
-    category: "frontend",
-    percentage: 90,
-    icon: SiTailwindcss,
-  },
-  { name: "HTML5", category: "frontend", percentage: 95, icon: FaHtml5 },
-  { name: "CSS3", category: "frontend", percentage: 90, icon: FaCss3Alt },
-  {
-    name: "Bootstrap",
-    category: "frontend",
-    percentage: 85,
-    icon: FaBootstrap,
-  },
-
-  // Backend
-  { name: "Node.js", category: "backend", percentage: 85, icon: FaNodeJs },
-  { name: "Express.js", category: "backend", percentage: 85, icon: SiExpress },
-  { name: "FastAPI", category: "backend", percentage: 75, icon: SiFastapi },
-  { name: "REST APIs", category: "backend", percentage: 90, icon: null },
-  {
-    name: "JWT Authentication",
-    category: "backend",
-    percentage: 85,
-    icon: null,
-  },
-  {
-    name: "Socket.io",
-    category: "backend",
-    percentage: 75,
-    icon: SiSocketdotio,
-  },
-
-  { name: "MongoDB", category: "database", percentage: 85, icon: SiMongodb },
-  { name: "MySQL", category: "database", percentage: 80, icon: SiMysql },
-  {
-    name: "PostgreSQL",
-    category: "database",
-    percentage: 75,
-    icon: SiPostgresql,
-  },
-  { name: "Redis", category: "database", percentage: 75, icon: SiRedis },
-
-  {
-    name: "LangGraph",
-    category: "libraries",
-    percentage: 80,
-    icon: SiLangchain,
-  },
-  {
-    name: "LangChain",
-    category: "libraries",
-    percentage: 80,
-    icon: SiLangchain,
-  },
-  { name: "RAG", category: "libraries", percentage: 75, icon: null },
-  {
-    name: "Framer Motion",
-    category: "libraries",
-    percentage: 85,
-    icon: SiFramer,
-  },
-  {
-    name: "React Hook Form",
-    category: "libraries",
-    percentage: 85,
-    icon: FaReact,
-  },
-  { name: "Recharts", category: "libraries", percentage: 75, icon: null },
-  { name: "ExcelJS", category: "libraries", percentage: 70, icon: null },
-
-  { name: "Docker", category: "tools", percentage: 80, icon: FaDocker },
-  { name: "Docker Compose", category: "tools", percentage: 80, icon: FaDocker },
-  { name: "Nginx", category: "tools", percentage: 70, icon: SiNginx },
-  { name: "Git", category: "tools", percentage: 90, icon: FaGitAlt },
-  { name: "GitHub", category: "tools", percentage: 90, icon: FaGithub },
-  { name: "Postman", category: "tools", percentage: 85, icon: SiPostman },
-  { name: "AWS S3", category: "tools", percentage: 70, icon: FaAws },
-];
-
-const CATEGORIES = [
-  { key: "all", label: "All", icon: LayoutGrid },
-  { key: "programming", label: "Programming", icon: Code2 },
-  { key: "frontend", label: "Frontend", icon: MonitorSmartphone },
-  { key: "backend", label: "Backend", icon: Server },
-  { key: "database", label: "Database", icon: Database },
-  { key: "libraries", label: "Libraries", icon: Library },
-  { key: "tools", label: "Tools", icon: Wrench },
-];
 
 
 
@@ -187,7 +40,7 @@ const cardSkillVariant = {
 };
 
 export default function TechArsenal() {
-  const [active, setActive] = useState("all");
+  const [active, setActive] = useState("programming");
   const tabRefs = useRef({});
   const containerRef = useRef(null);
 
@@ -254,10 +107,9 @@ export default function TechArsenal() {
             <span
               className="
                 imperial-script-regular
-                text-5xl
                 font-bold
 
-                text-teal-600
+                text-black
                 dark:text-white
 
                 transition-colors

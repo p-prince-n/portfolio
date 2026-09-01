@@ -17,6 +17,7 @@ import BackgroundAnimation from "./BackgroundAnimation";
 import { useTheme } from "./Context/ThemeContext";
 import Project from "./Components/Projects/Project";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const Section = ({ id, children, className = "" }) => {
   return (
@@ -124,6 +125,7 @@ const App = () => {
           </div>
         </Section>
         <Footer/>
+        <ScrollToTop />
       </div>
     </div>
   );

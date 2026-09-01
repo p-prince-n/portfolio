@@ -105,9 +105,8 @@ export default function SkillCards() {
             <span
               className="
                 imperial-script-regular
-                text-amber-600
+                text-black
                 dark:text-white
-                text-5xl
                 font-bold
                 transition-colors
                 duration-500

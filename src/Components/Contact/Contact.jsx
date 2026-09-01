@@ -93,19 +93,22 @@ const Contact = () => {
         label={"Get In Touch"}
         header={
           <>
-            Let's Work{" "}
-            <span
+            Let's {" "}
+           <span
               className="
-                text-teal-600
-                dark:text-teal-400
-
+            
+                text-black
+                dark:text-white
+           
+                font-bold
                 transition-colors
                 duration-500
                 ease-in-out
               "
             >
-              Together
+              Work {" "}
             </span>
+              Together
           </>
         }
         description={

@@ -1,5 +1,56 @@
-import { FolderKanban, GraduationCap, Home, Mail, MapPin, Phone, Sparkles, User } from "lucide-react";
-import { FaGithub, FaLaptopCode, FaLinkedin, FaLinkedinIn, FaRocket } from "react-icons/fa";
+import {
+  FolderKanban,
+  GraduationCap,
+  Home,
+  Mail,
+  MapPin,
+  Phone,
+  Sparkles,
+  User,
+  LayoutGrid,
+  Code2,
+  MonitorSmartphone,
+  Server,
+  Database,
+  Library,
+  Wrench,
+} from "lucide-react";
+import {
+  FaGithub,
+  FaLaptopCode,
+  FaLinkedin,
+  FaLinkedinIn,
+  FaRocket,
+  FaJava,
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaDocker,
+  FaGitAlt,
+  FaAws,
+} from "react-icons/fa";
+
+import {
+  SiJavascript,
+  SiNextdotjs,
+  SiRedux,
+  // SiZustand,
+  SiTailwindcss,
+  SiExpress,
+  SiFastapi,
+  SiSocketdotio,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiRedis,
+  SiLangchain,
+  SiFramer,
+  SiPostman,
+  SiNginx,
+} from "react-icons/si";
 
 const navItems = [
   {
@@ -25,14 +76,14 @@ const navItems = [
   {
     name: "Projects",
     href: "#projects",
-    icon: FolderKanban
+    icon: FolderKanban,
   },
   {
     name: "Education",
     href: "#education",
     icon: GraduationCap,
   },
-  
+
   {
     name: "Experience",
     href: "#experience",
@@ -54,7 +105,7 @@ const typewriterRoles = [
   "Node.js Developer",
   "Multi-Agent System Builder",
   "API Developer",
-  "UI/UX Focused Engineer"
+  "UI/UX Focused Engineer",
 ];
 
 const words = [
@@ -67,7 +118,6 @@ const words = [
   { text: "Designs", imgPath: "/images/designs.svg" },
   { text: "Code", imgPath: "/images/code.svg" },
 ];
-
 
 const contactItems = [
   {
@@ -114,11 +164,10 @@ const LinksData = [
   },
   {
     name: "Email",
-    icon: Mail,
+    icons: Mail,
     href: "mailto:pp2358296@gmail.com",
   },
 ];
-
 
 const showProjectOverView = [
   {
@@ -202,7 +251,7 @@ const showProjectOverView = [
     },
   },
   {
-    id:2,
+    id: 2,
     mobileImage: false,
     image: "/images/projectimages/shopnova.png",
 
@@ -268,7 +317,7 @@ const showProjectOverView = [
   },
 
   {
-    id:3,
+    id: 3,
     image: "/images/projectimages/talkspace.png",
     mobileImage: false,
 
@@ -326,9 +375,9 @@ const showProjectOverView = [
         "Built with a MERN-based client-server architecture using React.js for the frontend, Node.js and Express.js for backend APIs, and MongoDB for persistent data storage. Real-time communication is handled through Socket.IO, while JWT-based authentication secures user sessions.",
     },
   },
- 
+
   {
-    id:5,
+    id: 5,
     image: "/images/projectimages/chattrix.png",
     mobileImage: false,
 
@@ -387,7 +436,7 @@ const showProjectOverView = [
   },
 
   {
-    id:6,
+    id: 6,
     image: "/images/projectimages/amazonclone.jpg",
     mobileImage: true,
 
@@ -448,7 +497,7 @@ const showProjectOverView = [
   },
 
   {
-    id:7,
+    id: 7,
     image: "/images/projectimages/voiceassistant.jpg",
     mobileImage: true,
 
@@ -499,7 +548,7 @@ const showProjectOverView = [
   },
 
   {
-    id:8,
+    id: 8,
     image: "/images/projectimages/weatherapp.jpg",
     mobileImage: true,
 
@@ -556,7 +605,7 @@ const showProjectOverView = [
   },
 
   {
-    id:9,
+    id: 9,
     image: "/images/projectimages/singlist.png",
     mobileImage: false,
 
@@ -619,7 +668,7 @@ const showProjectOverView = [
   },
 
   {
-    id:10,
+    id: 10,
     image: "images/projectimages/codecraftsblog.png",
     mobileImage: false,
 
@@ -682,7 +731,7 @@ const showProjectOverView = [
     },
   },
   {
-    id:11,
+    id: 11,
     image: "/images/projectimages/climato.png",
     mobileImage: false,
 
@@ -737,14 +786,126 @@ const showProjectOverView = [
         "Built as a modern client-side weather application that communicates with an external weather API to retrieve and display current weather information. The responsive frontend is designed to provide a consistent experience across desktop and mobile devices.",
     },
   },
-  
+];
+
+const SKILLS = [
+  { name: "Java", category: "programming", percentage: 75, icon: FaJava },
+  {
+    name: "JavaScript (ES6+)",
+    category: "programming",
+    percentage: 90,
+    icon: SiJavascript,
+  },
+  { name: "Python", category: "programming", percentage: 80, icon: FaPython },
+  { name: "SQL", category: "programming", percentage: 80, icon: null },
+  { name: "Dart", category: "programming", percentage: 65, icon: null },
+
+  { name: "React.js", category: "frontend", percentage: 90, icon: FaReact },
+  { name: "Next.js", category: "frontend", percentage: 80, icon: SiNextdotjs },
+  {
+    name: "Redux Toolkit",
+    category: "frontend",
+    percentage: 85,
+    icon: SiRedux,
+  },
+  // { name: "Zustand", category: "frontend", percentage: 80, icon: SiZustand },
+  {
+    name: "Tailwind CSS",
+    category: "frontend",
+    percentage: 90,
+    icon: SiTailwindcss,
+  },
+  { name: "HTML5", category: "frontend", percentage: 95, icon: FaHtml5 },
+  { name: "CSS3", category: "frontend", percentage: 90, icon: FaCss3Alt },
+  {
+    name: "Bootstrap",
+    category: "frontend",
+    percentage: 85,
+    icon: FaBootstrap,
+  },
+
+  // Backend
+  { name: "Node.js", category: "backend", percentage: 85, icon: FaNodeJs },
+  { name: "Express.js", category: "backend", percentage: 85, icon: SiExpress },
+  { name: "FastAPI", category: "backend", percentage: 75, icon: SiFastapi },
+  { name: "REST APIs", category: "backend", percentage: 90, icon: null },
+  {
+    name: "JWT Authentication",
+    category: "backend",
+    percentage: 85,
+    icon: null,
+  },
+  {
+    name: "Socket.io",
+    category: "backend",
+    percentage: 75,
+    icon: SiSocketdotio,
+  },
+
+  { name: "MongoDB", category: "database", percentage: 85, icon: SiMongodb },
+  { name: "MySQL", category: "database", percentage: 80, icon: SiMysql },
+  {
+    name: "PostgreSQL",
+    category: "database",
+    percentage: 75,
+    icon: SiPostgresql,
+  },
+  { name: "Redis", category: "database", percentage: 75, icon: SiRedis },
+
+  {
+    name: "LangGraph",
+    category: "libraries",
+    percentage: 80,
+    icon: SiLangchain,
+  },
+  {
+    name: "LangChain",
+    category: "libraries",
+    percentage: 80,
+    icon: SiLangchain,
+  },
+  { name: "RAG", category: "libraries", percentage: 75, icon: null },
+  {
+    name: "Framer Motion",
+    category: "libraries",
+    percentage: 85,
+    icon: SiFramer,
+  },
+  {
+    name: "React Hook Form",
+    category: "libraries",
+    percentage: 85,
+    icon: FaReact,
+  },
+  { name: "Recharts", category: "libraries", percentage: 75, icon: null },
+  { name: "ExcelJS", category: "libraries", percentage: 70, icon: null },
+
+  { name: "Docker", category: "tools", percentage: 80, icon: FaDocker },
+  { name: "Docker Compose", category: "tools", percentage: 80, icon: FaDocker },
+  { name: "Nginx", category: "tools", percentage: 70, icon: SiNginx },
+  { name: "Git", category: "tools", percentage: 90, icon: FaGitAlt },
+  { name: "GitHub", category: "tools", percentage: 90, icon: FaGithub },
+  { name: "Postman", category: "tools", percentage: 85, icon: SiPostman },
+  { name: "AWS S3", category: "tools", percentage: 70, icon: FaAws },
+];
+
+const CATEGORIES = [
+  { key: "all", label: "All", icon: LayoutGrid },
+  { key: "programming", label: "Programming", icon: Code2 },
+  { key: "frontend", label: "Frontend", icon: MonitorSmartphone },
+  { key: "backend", label: "Backend", icon: Server },
+  { key: "database", label: "Database", icon: Database },
+  { key: "libraries", label: "Libraries", icon: Library },
+  { key: "tools", label: "Tools", icon: Wrench },
 ];
 
 export {
+  CATEGORIES,
+  SKILLS,
   words,
   typewriterRoles,
   navItems,
   contactItems,
   showProjectOverView,
-  LinksData
+  LinksData,
 };

@@ -119,6 +119,7 @@ const Footer = () => {
               whileTap={{ scale: 0.97 }}
               className="
                 group
+                cursor-pointer
                 flex
                 items-center
                 gap-3
@@ -193,57 +194,131 @@ const Footer = () => {
 
             {/* Social links */}
             <div className="mt-7 flex items-center gap-2.5">
-              {LinksData.map((social, index) => {
-                const Icon = social.icons;
-                if (!Icon) return null;
+     
+{LinksData.map((social) => {
+  const Icon = social.icons;
 
-                return (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: 0.15 + index * 0.08,
-                      duration: 0.3,
-                    }}
-                    whileHover={{
-                      y: -4,
-                      scale: 1.05,
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-slate-200
-                      bg-slate-50
-                      text-slate-600
-                      transition-all
-                      duration-300
-                      hover:border-cyan-400/50
-                      hover:bg-cyan-50
-                      hover:text-cyan-600
-                      dark:border-white/10
-                      dark:bg-white/[0.03]
-                      dark:text-slate-400
-                      dark:hover:border-cyan-400/30
-                      dark:hover:bg-cyan-400/10
-                      dark:hover:text-cyan-400
-                    "
-                  >
-                <Icon />
-                  </motion.a>
-                );
-              })}
+  return (
+    <motion.a
+      key={social.name}
+      href={social.href}
+      target={social.name === "Email" ? undefined : "_blank"}
+      rel={social.name === "Email" ? undefined : "noopener noreferrer"}
+      aria-label={social.name}
+      initial="initial"
+      whileHover="hover"
+      whileTap="tap"
+      variants={{
+        initial: {
+          y: 0,
+          scale: 1,
+        },
+        hover: {
+          y: -4,
+          scale: 1.08,
+        },
+        tap: {
+          scale: 0.94,
+        },
+      }}
+      transition={{
+        duration: 0.25,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="
+        group
+        relative
+        cursor-pointer
+        isolate
+        flex
+        h-11
+        w-11
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-xl
+
+        border
+        border-slate-200
+        bg-slate-50
+        text-slate-600
+
+        dark:border-white/10
+        dark:bg-white/[0.03]
+        dark:text-slate-400
+
+        transition-all
+        duration-300
+
+        shadow-sm
+        dark:shadow-[0_0_15px_rgba(52,211,153,0.05)]
+
+        hover:border-cyan-400
+        dark:hover:border-emerald-400
+
+        hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
+        dark:hover:shadow-[0_0_25px_rgba(52,211,153,0.3)]
+      "
+    >
+      {/* Animated background */}
+      <span
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          -z-10
+
+          h-0
+          w-0
+          -translate-x-1/2
+          -translate-y-1/2
+
+          rounded-full
+
+          bg-cyan-500
+          dark:bg-emerald-400
+
+          opacity-90
+
+          transition-[width,height]
+          duration-500
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          group-hover:h-[180%]
+          group-hover:w-[180%]
+        "
+      />
+
+      {/* Icon */}
+      <span
+        className="
+          relative
+          z-10
+          flex
+          items-center
+          justify-center
+
+          text-slate-600
+          dark:text-slate-400
+
+          transition-all
+          duration-300
+          ease-out
+
+          group-hover:text-white
+          group-hover:scale-110
+
+          dark:group-hover:text-black
+        "
+      >
+        <Icon size={18} />
+      </span>
+    </motion.a>
+  );
+})}
+
+
             </div>
           </motion.div>
 
@@ -362,7 +437,7 @@ const Footer = () => {
             </p>
 
             <motion.a
-              href="mailto:your-email@example.com"
+              href="mailto:pp2358296@gmail.com"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="

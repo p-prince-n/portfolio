@@ -9,7 +9,7 @@ import {
   Cpu,
 } from "lucide-react";
 
-// import profileImage from "../../assets/prince.png";
+
 
 const HeroRight = () => {
   return (
@@ -160,9 +160,10 @@ const HeroRight = () => {
         >
           {/* Image */}
           <img
-            src={"https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+            src={"profileImage.png"}
             alt="Prince - Full Stack Developer"
             className="
+            mt-5
               h-full
               w-full
               object-cover
