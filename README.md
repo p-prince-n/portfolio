@@ -15,7 +15,7 @@
 <p align="center">
   🌐 <strong>Live Portfolio</strong>
   <br />
-  <a href="https://p-prince-n-portfolio-31g3ud6co-princes-projects-9d76e10d.vercel.app/">
+  <a href="https://p-prince-n-portfolio.vercel.app/">
     View Live Website →
   </a>
 </p>
