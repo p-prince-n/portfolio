@@ -509,17 +509,7 @@ const HeroLeft = () => {
                   dark:hover:shadow-[0_0_30px_rgba(167,139,250,0.4)]
                 "
                 onClick={() => {
-                  const link = document.createElement("a");
-
-                  link.href = "/pdf/prince-prajapati.pdf";
-
-                  link.download = "Prince-Prajapati-Resume.pdf";
-
-                  document.body.appendChild(link);
-
-                  link.click();
-
-                  document.body.removeChild(link);
+                 window.open("/pdf/prince-prajapati.pdf", "_blank");
                 }}
               >
                 <Download size={18} />
