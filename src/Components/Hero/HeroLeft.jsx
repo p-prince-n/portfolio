@@ -511,7 +511,7 @@ const HeroLeft = () => {
                 onClick={() => {
                   const link = document.createElement("a");
 
-                  link.href = "/resume.pdf";
+                  link.href = "/pdf/prince-prajapati.pdf";
 
                   link.download = "Prince-Prajapati-Resume.pdf";
 
